@@ -55,7 +55,7 @@
                                 <ul class="navbar-nav">
 
                                     <li class="nav-item">
-                                        <a class="nav-link arrow-none" href="#" id="topnav-dashboard" role="button">
+                                        <a class="nav-link arrow-none" href="dashboard.html" id="topnav-dashboard" role="button">
                                             <span key="t-dashboards">Dashboard</span>
                                         </a>
                                     </li>
@@ -244,10 +244,32 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary waves-effect waves-light"><i
-                            class="bx bx-plus"></i></button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light"><i
-                            class="bx bx-help-circle"></i></button>
+                    <div class="dropdown d-inline-block user-dropdown">
+                        <button type="button" class="btn header-item btn-primary waves-effect waves-light"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-plus"></i>
+
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center noti-heading">
+                                    <div class="col">
+                                        <h5 class="m-0" key="t-notifications">GLOBAL ACTIONS</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+
+                                <div class="global-action-btns">
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#log-call"><button type="button" class="btn btn-orange waves-effect waves-light me-2"><i class="bx bx-phone-call"></i></button>Log a Call</a>
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-task"><button type="button" class="btn btn-info waves-effect waves-light me-2"><i class="bx bxs-edit"></i></button>New task</a> 
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-event"><button type="button" class="btn btn-success waves-effect waves-light me-2"><i class="bx bx-calendar-plus"></i></button>New Event</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="settings.html"><button type="button" class="btn btn-primary waves-effect waves-light"><i
                                 class="bx bx-cog"></i></button></a>
                     <div class="dropdown d-inline-block user-dropdown">
@@ -354,7 +376,7 @@
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                            <a class="dropdown-item" href="profile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                                 <span key="t-profile">Profile</span></a>
                             <a class="dropdown-item d-block" href="settings.html"><i
                                     class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
@@ -395,7 +417,7 @@
                                     ago</span>
                             </div>
                             <div class="top-header-btns">
-                                <button type="button" class="btn btn-soft-dark waves-effect waves-light"><i
+                                <button data-bs-toggle="modal" data-bs-target="#import" type="button" class="btn btn-soft-dark waves-effect waves-light"><i
                                         class="bx bx-import"></i>Import</button>
                             </div>
                             <div class="top-header-rightbtns">
@@ -405,8 +427,6 @@
                                         <span class="bx bx-search-alt"></span>
                                     </div>
                                 </form>
-                                <button type="button" class="btn btn-soft-dark waves-effect waves-light"><i
-                                        class="bx bx-cog"></i></button>
                                 <div class="dropdown d-inline-block">
                                     <button type="button"
                                         class="btn header-item font-size-15 btn-soft-dark waves-effect waves-light"
@@ -432,14 +452,59 @@
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
-                                        class="mdi mdi-account-edit-outline"></i></button>
-                                <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
                                         class="bx bx-pie-chart"></i></button>
-                                <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
-                                        class="bx bx-filter-alt"></i></button>
+                                        <div class="dropdown d-inline-block user-dropdown">
+                                            <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"
+                                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                <i class="bx bx-filter-alt"></i>         
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end p-0"
+                                                aria-labelledby="page-header-notifications-dropdown">
+                                                <div class="p-3">
+                                                    <div class="row align-items-center noti-heading">
+                                                        <div class="col">
+                                                            <h5 class="m-0" key="t-notifications">filter</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div data-simplebar style="max-height: 230px;">
+                    
+                                                    <div class="global-action-btns">
+                                                        <div class="form-check form-check-primary mb-1">
+                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                            <label class="form-check-label" for="formCheckcolor1">
+                                                                Name
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary my-1">
+                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                            <label class="form-check-label" for="formCheckcolor1">
+                                                                Account Name
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary my-1">
+                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                            <label class="form-check-label" for="formCheckcolor1">
+                                                                Amount
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-primary my-1">
+                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                            <label class="form-check-label" for="formCheckcolor1">
+                                                                Stage
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
                                     data-bs-toggle="modal" data-bs-target="#add-account">
-                                    <i class="bx bx-plus-circle font-size-15 align-middle me-1"></i> New
+                                    <i class="bx bx-plus-circle font-size-15 align-middle me-1"></i>New
                                 </button>
                             </div>
                         </div>
@@ -477,10 +542,9 @@
                                                                 <i class="bx bx-dots-horizontal"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <li><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Edit</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Change Owner</a></li>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -531,10 +595,9 @@
                                                                 <i class="bx bx-dots-horizontal"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <li><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Edit</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Change Owner</a></li>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -562,8 +625,7 @@
                                             </div>
                                             <div class="board-item">
                                                 <div class='task' draggable='true'>
-                                                    <div
-                                                        class="d-flex align-items-center justify-content-between task-a">
+                                                    <div class="d-flex align-items-center justify-content-between task-a">
                                                         <a href="lead-details.html">
                                                             <div class="d-flex align-items-center due-date d-date">
                                                                 <img class="accounts-logo-size"
@@ -585,10 +647,9 @@
                                                                 <i class="bx bx-dots-horizontal"></i>
                                                             </button>
                                                             <div class="dropdown-menu">
-                                                                <li><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Edit</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#edit-account"><a href="#" class="dropdown-item">Change Owner</a></li>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -820,201 +881,291 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="import" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Add Lead</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="uploadArea" class="upload-area">
+                    <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                        <span class="drop-zoon__icon">
+                            <i class='bx bxs-file-image'></i>
+                        </span>
+                        <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+                        <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
+                        <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
+                            draggable="false">
+                        <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+                    </div>
 
-    <div class="modal fade" id="add-account" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>Add Account</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="uploadArea" class="upload-area">
-                                <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
-                                    <span class="drop-zoon__icon">
-                                        <i class='bx bxs-file-image'></i>
-                                    </span>
-                                    <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                                    <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
-                                    <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
-                                        draggable="false">
-                                    <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
-                                </div>
+                    <div id="fileDetails" class="upload-area__file-details file-details">
+                        <h3 class="file-details__title">Uploaded File</h3>
 
-                                <div id="fileDetails" class="upload-area__file-details file-details">
-                                    <h3 class="file-details__title">Uploaded File</h3>
-
-                                    <div id="uploadedFile" class="uploaded-file">
-                                        <div class="uploaded-file__icon-container">
-                                            <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                            <span class="uploaded-file__icon-text"></span>
-                                        </div>
-
-                                        <div id="uploadedFileInfo" class="uploaded-file__info">
-                                            <span class="uploaded-file__name">Proejct 1</span>
-                                            <span class="uploaded-file__counter">0%</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Account Name</label>
+                        <div id="uploadedFile" class="uploaded-file">
+                            <div class="uploaded-file__icon-container">
+                                <i class='bx bxs-file-blank uploaded-file__icon'></i>
+                                <span class="uploaded-file__icon-text"></span>
                             </div>
 
-                            <div class="form-grp">
-                                <h6 class="d-flex align-items-center"><span class="lead-owner">Account Owner : </span>
-                                    <div><img src="assets/images/users/avatar-1.jpg" alt=""
-                                            class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
-                                </h6>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Phone</label>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Parent Account</label>
-                                <i class="bx bx-search search-icn"></i>
-                            </div>
-
-                            <h6 class="selct-box-head">Type</h6>
-                            <div class="form-grp inputGroup">
-                                <div class="select-inp">
-                                    <select class="form-control">
-                                        <option value="AK">None</option>
-                                        <option value="AK">Analyst</option>
-                                        <option value="HI">Competitor</option>
-                                        <option value="CA">Customer</option>
-                                    </select>
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-
-                            <h6 class="selct-box-head">Industry</h6>
-                            <div class="form-grp inputGroup">
-                                <div class="select-inp">
-                                    <select class="form-control">
-                                        <option value="AK">None</option>
-                                        <option value="HI">Agriculture</option>
-                                        <option value="CA">Apparel</option>
-                                        <option value="HI">Banking</option>
-                                        <option value="CA">Chemicals</option>
-                                        <option value="HI">Communications</option>
-                                        <option value="CA">Constructions</option>
-                                    </select>
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-
-
-                            <h5 class="addrss-info">Additional Information</h5>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Website</label>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Description</label>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Phone</label>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Employees</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-
-
-                            <h5 class="addrss-info mt-0">Address Information</h5>
-                            <h6 class="shipping-billing-head">Billing Address</h6>
-                            <div class="form-grp">
-                                <textarea id="formmessage" class="form-control" rows="3"
-                                    placeholder=" Billing Street"></textarea>
-                            </div>
-
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Billing City</label>
-                            </div>
-                            <div class="row gx-2">
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Billing Zip/Postel Code</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Billing State/Province</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Billing Country</label>
-                            </div>
-                            <h6 class="shipping-billing-head">Shipping Address</h6>
-                            <div class="form-grp">
-                                <textarea id="formmessage" class="form-control" rows="3"
-                                    placeholder=" Shipping Street"></textarea>
-                            </div>
-
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Shipping City</label>
-                            </div>
-                            <div class="row gx-2">
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Shipping Zip/Postel Code</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Shipping State/Province</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Shipping Country</label>
+                            <div id="uploadedFileInfo" class="uploaded-file__info">
+                                <span class="uploaded-file__name">Proejct 1</span>
+                                <span class="uploaded-file__counter">0%</span>
                             </div>
                         </div>
                     </div>
 
+                </div>
+            </div>
 
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Upload</button>
+                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
+                    data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+    </div>
+    <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Delete Lead</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h4 class="delete-hint">Are you sure you want to delete this lead?</h4>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Delete</button>
+                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="edit-account" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Edit Account(Account Name)</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="uploadArea" class="upload-area">
+                            <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                                <span class="drop-zoon__icon">
+                                    <i class='bx bxs-file-image'></i>
+                                </span>
+                                <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+                                <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
+                                <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
+                                    draggable="false">
+                                <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+                            </div>
+
+                            <div id="fileDetails" class="upload-area__file-details file-details">
+                                <h3 class="file-details__title">Uploaded File</h3>
+
+                                <div id="uploadedFile" class="uploaded-file">
+                                    <div class="uploaded-file__icon-container">
+                                        <i class='bx bxs-file-blank uploaded-file__icon'></i>
+                                        <span class="uploaded-file__icon-text"></span>
+                                    </div>
+
+                                    <div id="uploadedFileInfo" class="uploaded-file__info">
+                                        <span class="uploaded-file__name">Proejct 1</span>
+                                        <span class="uploaded-file__counter">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Account Name</label>
+                        </div>
+
+                        <div class="form-grp">
+                            <h6 class="d-flex align-items-center"><span class="lead-owner">Account Owner : </span>
+                                <div><img src="assets/images/users/avatar-1.jpg" alt=""
+                                        class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
+                            </h6>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Phone</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Parent Account</label>
+                            <i class="bx bx-search search-icn"></i>
+                        </div>
+
+                        <h6 class="selct-box-head">Type</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="AK">Analyst</option>
+                                    <option value="HI">Competitor</option>
+                                    <option value="CA">Customer</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <h6 class="selct-box-head">Industry</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Agriculture</option>
+                                    <option value="CA">Apparel</option>
+                                    <option value="HI">Banking</option>
+                                    <option value="CA">Chemicals</option>
+                                    <option value="HI">Communications</option>
+                                    <option value="CA">Constructions</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
 
 
+                        <h5 class="addrss-info">Additional Information</h5>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Website</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Description</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Phone</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Employees</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+
+                        <h5 class="addrss-info mt-0">Address Information</h5>
+                        <h6 class="shipping-billing-head">Billing Address</h6>
+                        <div class="form-grp">
+                            <textarea id="formmessage" class="form-control" rows="3"
+                                placeholder=" Billing Street"></textarea>
+                        </div>
+
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Billing City</label>
+                        </div>
+                        <div class="row gx-2">
+                            <div class="col-lg-6">
+                                <div class="inputGroup form-control">
+                                    <input type="text" required="" autocomplete="off">
+                                    <label for="name">Billing Zip/Postel Code</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="inputGroup form-control">
+                                    <input type="text" required="" autocomplete="off">
+                                    <label for="name">Billing State/Province</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Billing Country</label>
+                        </div>
+                        <h6 class="shipping-billing-head">Shipping Address</h6>
+                        <div class="form-grp">
+                            <textarea id="formmessage" class="form-control" rows="3"
+                                placeholder=" Shipping Street"></textarea>
+                        </div>
+
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Shipping City</label>
+                        </div>
+                        <div class="row gx-2">
+                            <div class="col-lg-6">
+                                <div class="inputGroup form-control">
+                                    <input type="text" required="" autocomplete="off">
+                                    <label for="name">Shipping Zip/Postel Code</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="inputGroup form-control">
+                                    <input type="text" required="" autocomplete="off">
+                                    <label for="name">Shipping State/Province</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Shipping Country</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
+                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="change-owner" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Change Owner</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6 class="selct-box-head">Search Owner</h6>
+                <div class="inputGroup form-control">
+                    <input type="text" required="" autocomplete="off">
+                    <label class="search-icon" for="name">Search Owner</label>
+                    <i class="bx bx-search search-icn"></i>
+                </div>
+            </div>
+
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
+                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- JAVASCRIPT -->
     <script src="assets/libs/jquery/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

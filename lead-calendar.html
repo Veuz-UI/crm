@@ -13,6 +13,7 @@
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/calendar/fullcalendar.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -61,7 +62,7 @@
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none" href="lead.html"
+                                        <a class="nav-link dropdown-toggle arrow-none btn btn-primary" href="lead.html"
                                             id="topnav-pages" role="button">
                                             <span>Lead</span>
                                             <div class="arrow-down"></div>
@@ -85,8 +86,8 @@
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle arrow-none btn btn-primary"
-                                            href="contacts.html" id="topnav-pages" role="button">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="contacts.html"
+                                            id="topnav-pages" role="button">
                                             <span>Contacts</span>
                                             <div class="arrow-down"></div>
                                         </a>
@@ -263,9 +264,9 @@
                             <div data-simplebar style="max-height: 230px;">
 
                                 <div class="global-action-btns">
-                                   <a href="#" data-bs-toggle="modal" data-bs-target="#log-call"><button type="button" class="btn btn-orange waves-effect waves-light me-2"><i class="bx bx-phone-call"></i></button>Log a Call</a>
-                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-task"><button type="button" class="btn btn-info waves-effect waves-light me-2"><i class="bx bxs-edit"></i></button>New task</a> 
-                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-event"><button type="button" class="btn btn-success waves-effect waves-light me-2"><i class="bx bx-calendar-plus"></i></button>New Event</a> 
+                                   <a href="#" data-toggle="modal" data-bs-target="#log-call"><button type="button" class="btn btn-orange waves-effect waves-light me-2"><i class="bx bx-phone-call"></i></button>Log a Call</a>
+                                   <a href="#" data-toggle="modal" data-bs-target="#new-task"><button type="button" class="btn btn-info waves-effect waves-light me-2"><i class="bx bxs-edit"></i></button>New task</a> 
+                                   <a href="#" data-toggle="modal" data-bs-target="#new-event"><button type="button" class="btn btn-success waves-effect waves-light me-2"><i class="bx bx-calendar-plus"></i></button>New Event</a> 
                                 </div>
                             </div>
                         </div>
@@ -397,18 +398,18 @@
 
         <div class="page-content">
             <div class="container-fluid px-0">
-                <div class="card">
+                <div class="card mb-12">
                     <div class="card-body">
                         <div class="top-header-div">
                             <div class="main-heading">
-                                <h2><img src="assets/images/contacts.svg" alt="">
+                                <h2><img src="assets/images/lead.svg" alt="">
                                     <div class="team-select d-flex align-items-center">
                                         <div class="select-dropdwn">
                                             <select class="ddl-select" id="list" name="list">
-                                                <option value="1">All Open Contacts</option>
-                                                <option value="2">My Contacts</option>
+                                                <option value="1">All Open Leads</option>
+                                                <option value="2">My Leads</option>
                                                 <option value="3">Recently Viewed</option>
-                                                <option value="4">Recently Viewed Contacts</option>
+                                                <option value="4">Today's Leads</option>
                                             </select>
                                         </div>
                                     </div>
@@ -417,8 +418,9 @@
                                     ago</span>
                             </div>
                             <div class="top-header-btns">
-                                <button data-bs-toggle="modal" data-bs-target="#import" type="button" class="btn btn-soft-dark waves-effect waves-light"><i
-                                        class="bx bx-import"></i>Import</button>
+                                <div class="top-header-btns">
+                                    <button data-toggle="modal" data-target="#import" type="button" class="btn btn-soft-dark waves-effect waves-light"><i class="bx bx-import"></i>Import</button>
+                                </div>
                             </div>
                             <div class="top-header-rightbtns">
                                 <form class="app-search d-none d-lg-block">
@@ -427,6 +429,7 @@
                                         <span class="bx bx-search-alt"></span>
                                     </div>
                                 </form>
+
                                 <div class="dropdown d-inline-block">
                                     <button type="button"
                                         class="btn header-item font-size-15 btn-soft-dark waves-effect waves-light"
@@ -439,10 +442,10 @@
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end p-0 list-kan"
                                         aria-labelledby="page-header-notifications-dropdown">
                                         <div class="py-2">
-                                            <a class="dropdown-item" href="contacts.html"><i
+                                            <a class="dropdown-item" href="lead.html"><i
                                                     class="bx bx-list-ul font-size-16 align-middle me-1"></i>
                                                 <span>List</span></a>
-                                            <a class="dropdown-item" href="contacts-kan.html"><i
+                                            <a class="dropdown-item" href="lead-kan.html"><i
                                                     class="bx bx-grid-alt font-size-16 align-middle me-1"></i>
                                                 <span>Kanban</span></a>
                                             <a class="dropdown-item" href="#"><i
@@ -453,6 +456,7 @@
                                 </div>
                                 <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
                                         class="bx bx-pie-chart"></i></button>
+                            
                                         <div class="dropdown d-inline-block user-dropdown">
                                             <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"
                                                 id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -502,539 +506,184 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#add-contact">
+                                    data-toggle="modal" data-target="#add-lead">
                                     <i class="bx bx-plus-circle font-size-15 align-middle me-1"></i> New
                                 </button>
                             </div>
                         </div>
-                        <div class="kanban-view">
-                            <div class="board">
-                                <div class="board-column todo">
-                                    <div class="board-column-header d-flex align-items-center">
-                                        <h3>Owner-1</h3>
-                                        <span class="badge count-it">3</span>
-                                    </div>
-                                    <div class="board-column-content-wrapper">
-                                        <div class="board-column-content">
-                                            <div class="board-item">
-                                                <div class='task' draggable='true'>
-                                                    <div
-                                                        class="d-flex align-items-center justify-content-between task-a">
-                                                        <a href="lead-details.html">
-                                                            <div class="d-flex align-items-center due-date d-date">
-                                                                <img class="accounts-logo-size"
-                                                                    src="assets/images/veuz.svg">
-                                                                <div class="kan-star">
-                                                                    <p class="kan-task-heading">Veuz Concepts</p>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                </div>
-
-                                                            </div>
-                                                        </a>
-                                                        <div class="btn-group dropstart">
-                                                            <button type="button" class="btn btn-more dropdown-toggle"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="bx bx-dots-horizontal"></i>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <li data-bs-toggle="modal" data-bs-target="#edit-contact"><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#change-owner"><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/user.png">
-                                                        <p>Vp Purchasing</p>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/duedate.svg">
-                                                        <p>21/03/22</p>
-                                                    </div>
-
-
-                                                    <div class="d-flex align-items-center justify-content-between mt-2">
-                                                        <h6 class="billing">CA</h6>
-                                                        <div class="d-flex align-items-center kan-phone">
-                                                            <img src="assets/images/phone.svg" alt="" class="img-fluid">
-                                                            <h6>987456123</h6>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="board-item">
-                                                <div class='task' draggable='true'>
-                                                    <div
-                                                        class="d-flex align-items-center justify-content-between task-a">
-                                                        <a href="lead-details.html">
-                                                            <div class="d-flex align-items-center due-date d-date">
-                                                                <img class="accounts-logo-size"
-                                                                    src="assets/images/veuz.svg">
-                                                                <div class="kan-star">
-                                                                    <p class="kan-task-heading">Veuz Concepts</p>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                </div>
-
-                                                            </div>
-                                                        </a>
-                                                        <div class="btn-group dropstart">
-                                                            <button type="button" class="btn btn-more dropdown-toggle"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="bx bx-dots-horizontal"></i>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <li data-bs-toggle="modal" data-bs-target="#edit-contact"><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#change-owner"><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/user.png">
-                                                        <p>Vp Purchasing</p>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/duedate.svg">
-                                                        <p>21/03/22</p>
-                                                    </div>
-
-
-                                                    <div class="d-flex align-items-center justify-content-between mt-2">
-                                                        <h6 class="billing">CA</h6>
-                                                        <div class="d-flex align-items-center kan-phone">
-                                                            <img src="assets/images/phone.svg" alt="" class="img-fluid">
-                                                            <h6>987456123</h6>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="board-item">
-                                                <div class='task' draggable='true'>
-                                                    <div
-                                                        class="d-flex align-items-center justify-content-between task-a">
-                                                        <a href="lead-details.html">
-                                                            <div class="d-flex align-items-center due-date d-date">
-                                                                <img class="accounts-logo-size"
-                                                                    src="assets/images/veuz.svg">
-                                                                <div class="kan-star">
-                                                                    <p class="kan-task-heading">Veuz Concepts</p>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star checked"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                    <span class="fa fa-star"></span>
-                                                                </div>
-
-                                                            </div>
-                                                        </a>
-                                                        <div class="btn-group dropstart">
-                                                            <button type="button" class="btn btn-more dropdown-toggle"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class="bx bx-dots-horizontal"></i>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <li data-bs-toggle="modal" data-bs-target="#edit-contact"><a href="#" class="dropdown-item">Edit</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#delete"><a href="#" class="dropdown-item">Delete</a></li>
-                                                                <li data-bs-toggle="modal" data-bs-target="#change-owner"><a href="#" class="dropdown-item">Change Owner</a>
-                                                                </li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/user.png">
-                                                        <p>Vp Purchasing</p>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center due-date">
-                                                        <img src="assets/images/duedate.svg">
-                                                        <p>21/03/22</p>
-                                                    </div>
-
-
-                                                    <div class="d-flex align-items-center justify-content-between mt-2">
-                                                        <h6 class="billing">CA</h6>
-                                                        <div class="d-flex align-items-center kan-phone">
-                                                            <img src="assets/images/phone.svg" alt="" class="img-fluid">
-                                                            <h6>987456123</h6>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="board-column working">
-                                    <div class="board-column-header d-flex align-items-center">
-                                        <h3>Owner-2</h3>
-                                        <span class="badge count-it">0</span>
-                                    </div>
-
-                                    <div class="board-column-content-wrapper">
-                                        <div class="board-column-content">
-                                            <ul class="drag-inner-list">
-                                                <div class="empty-area drag-hide">
-                                                    <img src="assets/images/empty.svg" class="img-fluid">
-                                                    <p>Drag an existing Task and drop it<br> under this category.</p>
-                                                </div>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="board-column done">
-                                    <div class="board-column-header d-flex align-items-center">
-                                        <h3>Owner-3</h3>
-                                        <span class="badge count-it">0</span>
-                                    </div>
-                                    <div class="board-column-content-wrapper">
-                                        <div class="board-column-content">
-                                            <ul class="drag-inner-list">
-                                                <div class="empty-area drag-hide">
-                                                    <img src="assets/images/empty.svg" class="img-fluid">
-                                                    <p>Drag an existing Task and drop it<br> under this category.</p>
-                                                </div>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="board-column done">
-                                    <div class="board-column-header d-flex align-items-center">
-                                        <h3>Owner-4</h3>
-                                        <span class="badge count-it">0</span>
-                                    </div>
-                                    <div class="board-column-content-wrapper">
-                                        <div class="board-column-content">
-                                            <ul class="drag-inner-list">
-                                                <div class="empty-area drag-hide">
-                                                    <img src="assets/images/empty.svg" class="img-fluid">
-                                                    <p>Drag an existing Task and drop it<br> under this category.</p>
-                                                </div>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="last-grid">
-                                    <ul class="drag-inner-list2 d-flex align-items-center justify-content-center">
-                                        <div class="">
-                                            <script
-                                                src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-                                            </script>
-                                            <lottie-player
-                                                src="https://assets2.lottiefiles.com/packages/lf20_sHWjfqhsHU.json"
-                                                background="transparent" speed="1" style="width: 280px; height: 280px;"
-                                                loop autoplay></lottie-player>
-                                            <h4 class="head-of-add">Add Stages</h4>
-                                            <p class="deccription-text">Create custom stages to suit your <br>business
-                                                requirements.
-                                            </p>
-                                            <button type="button" class="btn btn-kanban-create" data-bs-toggle="modal"
-                                                data-bs-target="#add-stages">Create</button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
-
-            </div>
-
-
-        </div>
-
-
-
-
-    </div>
-
-
-    <div class="modal fade" id="add-stages" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>Add stages</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="update-stg">
-                        <div class="row mb-1 drop__card1">
-                            <div class="col-md-7">
-                                <p class="data-label2">Stage Title</p>
-
-                            </div>
-                            <div class="col px-0">
-                                <p class="data-label2">Color</p>
-
-                            </div>
-                            <div class="col-md-4">
-                                <p class="data-label2">Status</p>
-
-                            </div>
-
-                            <div class="col-md-1 px-0 dlt-stage">
-
-                            </div>
-                        </div>
-                        <div class="drop__list" id="drop-items">
-                            <div class="row mb-2 drop__card">
-                                <div class="col-md-7">
-
-                                    <input type="text" class="form-control" value="To be testing">
-                                </div>
-                                <div class="col px-0">
-
-                                    <input class="form-control form-control-color mw-100" type="color" value="#556ee6"
-                                        id="example-color-input">
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="select-inp select-inp-sm">
-                                        <select class="form-control">
-                                            <option>Open</option>
-                                            <option>Closed</option>
-                                        </select>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-1 px-0 dlt-stage">
-                                    <i class="far fa-trash-alt" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Delete"></i>
-                                </div>
-                            </div>
-                            <div class="row mb-2 drop__card">
-                                <div class="col-md-7">
-
-                                    <input type="text" class="form-control" value="To be testing">
-                                </div>
-                                <div class="col px-0">
-
-                                    <input class="form-control form-control-color mw-100" type="color" value="#556ee6"
-                                        id="example-color-input">
-                                </div>
-                                <div class="col-md-3">
-
-                                    <div class="select-inp select-inp-sm">
-                                        <select class="form-control">
-                                            <option>Open</option>
-                                            <option>Closed</option>
-                                        </select>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-1 px-0 dlt-stage">
-                                    <i class="far fa-trash-alt" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Delete"></i>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row mt-2 mb-2">
-                            <div class="col-md-12 pl-3">
-                                <a href="#" class="add-stage-link"><i class="bx bx-plus-circle me-1"></i>Add Stages</a>
-                            </div>
-                            <div class="col-md-12 pl-3 mb-2">
-                                <select class="form-control select2" id="stage-select2">
-                                    <option>Set Default Stage </option>
-
-                                    <option value="">Unqualified</option>
-                                    <option value="">New</option>
-                                    <option value="">Working</option>
-                                    <option value="">Nurturing</option>
-
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="add-contact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>Add Contacts</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
+                <div class="calendar-vw">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div id="uploadArea" class="upload-area">
-                                <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
-                                    <span class="drop-zoon__icon">
-                                        <i class='bx bxs-file-image'></i>
-                                    </span>
-                                    <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                                    <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
-                                    <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
-                                        draggable="false">
-                                    <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
-                                </div>
-
-                                <div id="fileDetails" class="upload-area__file-details file-details">
-                                    <h3 class="file-details__title">Uploaded File</h3>
-
-                                    <div id="uploadedFile" class="uploaded-file">
-                                        <div class="uploaded-file__icon-container">
-                                            <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                            <span class="uploaded-file__icon-text"></span>
-                                        </div>
-
-                                        <div id="uploadedFileInfo" class="uploaded-file__info">
-                                            <span class="uploaded-file__name">Proejct 1</span>
-                                            <span class="uploaded-file__counter">0%</span>
+                        <div class="col-xl-2 ls-3 pe-md-0">
+                            <div class="card small-calendar">
+                                <div class="card-body">
+                                    <div class="d-grid">
+                                        <button class="btn font-16 btn-primary" id="btn-new-event" data-toggle="modal" data-target="#add-category"><i class="mdi mdi-plus-circle-outline"></i> Create
+                                            New Event</button>
+                                    </div>
+                                
+                                    <div class="wrapper sm-calendar">
+    
+                                        <header>
+                                            <p class="current-date"></p>
+                                            <div class="icons">
+                                                <span id="prev">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                        class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                                                    </svg>
+                                                </span>
+                        
+                                                <span id="next">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </header>
+                        
+                                        <div class="calenda-mini">
+                                            <ul class="weeks">
+                                                <li>Sun</li>
+                                                <li>Mon</li>
+                                                <li>Tue</li>
+                                                <li>Wed</li>
+                                                <li>Thu</li>
+                                                <li>Fri</li>
+                                                <li>Sat</li>
+                                            </ul>
+                                            <ul class="days"></ul>
                                         </div>
                                     </div>
+    
+                                    <div id="external-events" class="activity-list">
+                                        <p>Drag and drop your event or click in the calendar</p>
+                                        <div class="external-event fc-event bg-success" data-class="bg-inverse" style="position: relative">
+                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>My Event One
+                                        </div>
+                                        <div class="external-event fc-event bg-info" data-class="bg-danger" style="position: relative">
+                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>My Event Two
+                                        </div>
+                                        <div class="external-event fc-event bg-warning" data-class="bg-primary" style="position: relative">
+                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>My Event Three
+                                        </div>
+                                        <div class="external-event fc-event bg-danger" data-class="bg-purple" style="position: relative">
+                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>My Event Four
+                                        </div>
+                                    </div>
+    
+                                    <!-- checkbox -->
+                                    <div class="checkbox checkbox-primary mt-3">
+                                        <input id="drop-remove" type="checkbox" class="form-check-input">
+                                        <label for="drop-remove" class="form-check-label">
+                                                Remove after drop
+                                            </label>
+                                    </div>
+                                    
+                                    
+    
                                 </div>
-
                             </div>
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label class="search-icon" for="name">Account Name</label>
-                                <i class="bx bx-search search-icn"></i>
+                        </div> 
+    
+                        <div class="col-xl-10 ls-9">
+                            <div class="card main-calendar">
+                                <div class="card-body">
+                                    <div class="calendar-wrapper" id="calendar"></div>
+                                </div>
                             </div>
+                        </div> 
+    
+                    </div> 
+                </div>
+          
+            </div>
 
-                            <div class="form-grp">
-                                <h6 class="d-flex align-items-center"><span class="lead-owner">Account Owner : </span>
-                                    <div><img src="assets/images/users/avatar-1.jpg" alt=""
-                                            class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
-                                </h6>
-                            </div>
 
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Name</label>
-                            </div>
+        </div>
 
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Title</label>
-                            </div>
 
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Email</label>
-                            </div>
 
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Phone</label>
-                            </div>
 
-                            <h5 class="addrss-info">Additional Information</h5>
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Mobile</label>
-                            </div>
+    </div>
 
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Fax</label>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Reports to</label>
-                                <i class="bx bx-search search-icn"></i>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Department</label>
-                            </div>
-
+            <!-- BEGIN MODAL -->
+            <div class="modal fade none-border" id="event-modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="title-category modal-title">Add Event</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="col-md-6">
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
 
-                            <h5 class="addrss-info mt-0">Address Information</h5>
-                            <h6 class="shipping-billing-head">Mailing Address</h6>
-                            <div class="form-grp">
-                                <textarea id="formmessage" class="form-control" rows="3"
-                                    placeholder=" Mailing Street"></textarea>
-                            </div>
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Mailing Country</label>
-                            </div>
-
-                            <div class="row gx-2">
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Mailing Zip/Postel Code</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="inputGroup form-control">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="name">Mailing State/Province</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
-                                <label for="name">Mailing Country</label>
-                            </div>
-
+                            <button type="button" class="projectadd-btn btn btn-primary save-event waves-effect waves-light">Create event</button>
+                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                            <button type="button" class="cancel-btn btn btn-light waves-effect" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-
-
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="modal fade" id="edit-contact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+            <!-- Modal Add Category -->
+            <div class="modal fade none-border" id="add-category" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="title-category modal-title">Add a category</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label">Category Name</label>
+                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name">
+                                    </div>
+                                    <div class="col-md-12 mt-3">
+                                        <label class="control-label">Choose Category Color</label>
+                                        <div class="select-inp">
+                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                                <option value="success">Success</option>
+                                                <option value="danger">Danger</option>
+                                                <option value="primary">Primary</option>
+                                                <option value="warning">Warning</option>
+                                                <option value="inverse">Inverse</option>
+                                            </select>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="projectadd-btn btn btn-primary waves-effect  save-category" data-dismiss="modal">Save</button>
+                            <button type="button" class="cancel-btn btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL -->
+
+
+
+
+    <div class="modal fade" id="add-lead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>Edit Contact(Contact Name)</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Add Lead</span></h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -1068,19 +717,20 @@
                             </div>
 
                         </div>
-                        <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
-                            <label class="search-icon" for="name">Account Name</label>
-                            <i class="bx bx-search search-icn"></i>
+                        <h6 class="selct-box-head">Lead Status</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Unqualified</option>
+                                    <option value="CA">New</option>
+                                    <option value="NV">Working</option>
+                                    <option value="CA">Nurturing </option>
+                                    <option value="NV">Qualified</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
-
-                        <div class="form-grp">
-                            <h6 class="d-flex align-items-center"><span class="lead-owner">Account Owner : </span>
-                                <div><img src="assets/images/users/avatar-1.jpg" alt=""
-                                        class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
-                            </h6>
-                        </div>
-
                         <div class="inputGroup form-control">
                             <input type="text" required="" autocomplete="off">
                             <label for="name">Name</label>
@@ -1101,7 +751,6 @@
                             <label for="name">Phone</label>
                         </div>
 
-                        <h5 class="addrss-info">Additional Information</h5>
                         <div class="inputGroup form-control">
                             <input type="text" required="" autocomplete="off">
                             <label for="name">Mobile</label>
@@ -1109,54 +758,93 @@
 
                         <div class="inputGroup form-control">
                             <input type="text" required="" autocomplete="off">
-                            <label for="name">Fax</label>
+                            <label for="name">Website</label>
                         </div>
-
                         <div class="inputGroup form-control">
                             <input type="text" required="" autocomplete="off">
-                            <label for="name">Reports to</label>
-                            <i class="bx bx-search search-icn"></i>
+                            <label for="name">Company</label>
                         </div>
-
-                        <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
-                            <label for="name">Department</label>
+                        <h6 class="selct-box-head">Rating</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Hot</option>
+                                    <option value="CA">Warm</option>
+                                    <option value="CA">Cold</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
-
                     </div>
+
                     <div class="col-md-6">
 
-                        <h5 class="addrss-info mt-0">Address Information</h5>
-                        <h6 class="shipping-billing-head">Mailing Address</h6>
+                        <div class="form-grp">
+                            <h6 class="d-flex align-items-center"><span class="lead-owner">Lead Owner : </span>
+                                <div><img src="assets/images/users/avatar-1.jpg" alt=""
+                                        class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
+                            </h6>
+                        </div>
+
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">No. of Employees</label>
+                        </div>
+
+                        <h6 class="selct-box-head">Industry</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Agriculture</option>
+                                    <option value="CA">Apparel</option>
+                                    <option value="HI">Banking</option>
+                                    <option value="CA">Chemicals</option>
+                                    <option value="HI">Communications</option>
+                                    <option value="CA">Constructions</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <h6 class="selct-box-head">Lead Source</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Advertisement</option>
+                                    <option value="CA">Customer</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+
+                        <h5 class="addrss-info mt-3">Address Information</h5>
                         <div class="form-grp">
                             <textarea id="formmessage" class="form-control" rows="3"
-                                placeholder=" Mailing Street"></textarea>
-                        </div>
-                        <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
-                            <label for="name">Mailing Country</label>
-                        </div>
-
-                        <div class="row gx-2">
-                            <div class="col-lg-6">
-                                <div class="inputGroup form-control">
-                                    <input type="text" required="" autocomplete="off">
-                                    <label for="name">Mailing Zip/Postel Code</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="inputGroup form-control">
-                                    <input type="text" required="" autocomplete="off">
-                                    <label for="name">Mailing State/Province</label>
-                                </div>
-                            </div>
+                                placeholder="Street"></textarea>
                         </div>
 
                         <div class="inputGroup form-control">
                             <input type="text" required="" autocomplete="off">
-                            <label for="name">Mailing Country</label>
+                            <label for="name">No. of Employees</label>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Zip/Postel Code</label>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">State/Province</label>
                         </div>
 
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Country</label>
+                        </div>
                     </div>
                 </div>
 
@@ -1165,253 +853,245 @@
             <div class="modal-footer d-flex justify-content-center">
                 <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
                 <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
+                    data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
     </div>
-    <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
+    <div class="modal fade" id="edit-lead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>Delete Lead</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="staticBackdropLabel"><span>Add Lead</span></h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <h4 class="delete-hint">Are you sure you want to delete this Contact?</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="uploadArea" class="upload-area">
+                            <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                                <span class="drop-zoon__icon">
+                                    <i class='bx bxs-file-image'></i>
+                                </span>
+                                <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+                                <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
+                                <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
+                                    draggable="false">
+                                <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+                            </div>
 
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Delete</button>
-                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="modal fade" id="change-owner" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>Change Owner</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h6 class="selct-box-head">Search Owner</h6>
-                <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
-                    <label class="search-icon" for="name">Search Owner</label>
-                    <i class="bx bx-search search-icn"></i>
+                            <div id="fileDetails" class="upload-area__file-details file-details">
+                                <h3 class="file-details__title">Uploaded File</h3>
+
+                                <div id="uploadedFile" class="uploaded-file">
+                                    <div class="uploaded-file__icon-container">
+                                        <i class='bx bxs-file-blank uploaded-file__icon'></i>
+                                        <span class="uploaded-file__icon-text"></span>
+                                    </div>
+
+                                    <div id="uploadedFileInfo" class="uploaded-file__info">
+                                        <span class="uploaded-file__name">Proejct 1</span>
+                                        <span class="uploaded-file__counter">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h6 class="selct-box-head">Lead Status</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Unqualified</option>
+                                    <option value="CA">New</option>
+                                    <option value="NV">Working</option>
+                                    <option value="CA">Nurturing </option>
+                                    <option value="NV">Qualified</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Title</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Email</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Phone</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Mobile</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Website</label>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Company</label>
+                        </div>
+                        <h6 class="selct-box-head">Rating</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Hot</option>
+                                    <option value="CA">Warm</option>
+                                    <option value="CA">Cold</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-grp">
+                            <h6 class="d-flex align-items-center"><span class="lead-owner">Lead Owner : </span>
+                                <div><img src="assets/images/users/avatar-1.jpg" alt=""
+                                        class="avatar-xs rounded-circle mx-2"><span>Nabeel</span></div>
+                            </h6>
+                        </div>
+
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">No. of Employees</label>
+                        </div>
+
+                        <h6 class="selct-box-head">Industry</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Agriculture</option>
+                                    <option value="CA">Apparel</option>
+                                    <option value="HI">Banking</option>
+                                    <option value="CA">Chemicals</option>
+                                    <option value="HI">Communications</option>
+                                    <option value="CA">Constructions</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <h6 class="selct-box-head">Lead Source</h6>
+                        <div class="form-grp inputGroup">
+                            <div class="select-inp">
+                                <select class="form-control">
+                                    <option value="AK">None</option>
+                                    <option value="HI">Advertisement</option>
+                                    <option value="CA">Customer</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+
+                        <h5 class="addrss-info mt-3">Address Information</h5>
+                        <div class="form-grp">
+                            <textarea id="formmessage" class="form-control" rows="3"
+                                placeholder="Street"></textarea>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">No. of Employees</label>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Zip/Postel Code</label>
+                        </div>
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">State/Province</label>
+                        </div>
+
+                        <div class="inputGroup form-control">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="name">Country</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+
+            </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
                 <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
+                    data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
     </div>
     <div class="modal fade" id="import" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>Add Lead</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="uploadArea" class="upload-area">
-                    <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
-                        <span class="drop-zoon__icon">
-                            <i class='bx bxs-file-image'></i>
-                        </span>
-                        <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                        <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
-                        <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
-                            draggable="false">
-                        <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
-                    </div>
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"><span>Import</span></h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="uploadArea" class="upload-area">
+                        <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                            <span class="drop-zoon__icon">
+                                <i class='bx bxs-file-image'></i>
+                            </span>
+                            <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
+                            <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
+                            <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
+                                draggable="false">
+                            <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+                        </div>
 
-                    <div id="fileDetails" class="upload-area__file-details file-details">
-                        <h3 class="file-details__title">Uploaded File</h3>
+                        <div id="fileDetails" class="upload-area__file-details file-details">
+                            <h3 class="file-details__title">Uploaded File</h3>
 
-                        <div id="uploadedFile" class="uploaded-file">
-                            <div class="uploaded-file__icon-container">
-                                <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                <span class="uploaded-file__icon-text"></span>
+                            <div id="uploadedFile" class="uploaded-file">
+                                <div class="uploaded-file__icon-container">
+                                    <i class='bx bxs-file-blank uploaded-file__icon'></i>
+                                    <span class="uploaded-file__icon-text"></span>
+                                </div>
+
+                                <div id="uploadedFileInfo" class="uploaded-file__info">
+                                    <span class="uploaded-file__name">Proejct 1</span>
+                                    <span class="uploaded-file__counter">0%</span>
+                                </div>
                             </div>
-
-                            <div id="uploadedFileInfo" class="uploaded-file__info">
-                                <span class="uploaded-file__name">Proejct 1</span>
-                                <span class="uploaded-file__counter">0%</span>
-                            </div>
                         </div>
+
                     </div>
-
                 </div>
-            </div>
 
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Upload</button>
-                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Upload</button>
+                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
+                        data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <div class="modal fade" id="log-call" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>Log a Call</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
 
-                <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Subject</label>
-                    <i class="bx bx-search search-icn"></i>
-                </div>
-
-                <div class="form-grp">
-                    <textarea id="formmessage" class="form-control" rows="3" placeholder="Comments"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="modal fade" id="new-task" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>New Task</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Subject</label>
-                    <i class="bx bx-search search-icn"></i>
-                </div>
-
-                <div class="inputGroup form-control">
-                    <input type="date" required="" autocomplete="off" value="">
-                    <label for="name">Due Date</label>
-                </div>
-
-                <h6 class="selct-box-head">Assign to</h6>
-                <div class="form-grp inputGroup">
-                    <div class="select-inp">
-                        <select class="form-control">
-                            <option value="AK">None</option>
-                            <option value="HI">Qualificatio</option>
-                            <option value="CA">Need Analysis</option>
-                            <option value="NV">Proposal</option>
-                            <option value="CA">Negotiation </option>
-                            <option value="NV">Closed won</option>
-                            <option value="NV">Closed Lost </option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="modal fade" id="new-event" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><span>New Event</span></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Subject</label>
-                    <i class="bx bx-search search-icn"></i>
-                </div>
-
-                <div class="form-grp">
-                    <textarea id="formmessage" class="form-control" rows="3" placeholder="Comments"></textarea>
-                </div>
-                <div class="row">
-                    <h6 class="selct-box-head">Start</h6>
-                    <div class="col-lg-6">
-
-                        <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off" value="">
-                            <label for="name">Date</label>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-
-                        <div class="inputGroup form-control">
-                            <input type="time" required="" autocomplete="off" value="">
-                            <label for="name">Time</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <h6 class="selct-box-head">End</h6>
-                    <div class="col-lg-6">
-
-                        <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off" value="">
-                            <label for="name">Date</label>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-
-                        <div class="inputGroup form-control">
-                            <input type="time" required="" autocomplete="off" value="">
-                            <label for="name">Time</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Location</label>
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                    data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-
-    </div>
-    </div>
 
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/jquery/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -1421,7 +1101,13 @@
     <script src="assets/js/hammer.min.js"></script>
     <script src="assets/js/muuri.min.js"></script>
     <script src="assets/js/sortable.min.js"></script>
+    <script src="assets/libs/calendar/jquery-ui.min.js"></script>
+    <script src="assets/libs/calendar/moment.min.js"></script>
+    <script src="assets/libs/calendar/fullcalendar.min.js"></script>
+    <script src="assets/libs/calendar/jquery.fullcalendar.js"></script>
     <script src="assets/js/app.js"></script>
+
+    
     <script>
         $('.select2').select2({
             dropdownParent: $('#add-stages')
@@ -1676,6 +1362,61 @@
             };
         };
     </script>
+
+<script>
+    const daysTag = document.querySelector(".days");
+    const currentDate = document.querySelector(".current-date");
+    const prevNextIcon = document.querySelectorAll(".icons span");
+
+    let currYear = new Date().getFullYear();
+    let currMonth = new Date().getMonth();
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+        "October", "November", "December"
+    ];
+
+    const renderCalendar = () => {
+        const date = new Date(currYear, currMonth, 1);
+        let firstDayofMonth = date.getDay();
+        let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+        let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+        let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+
+        let liTag = "";
+
+        for (let i = firstDayofMonth; i > 0; i--) {
+            liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+        }
+
+        for (let i = 1; i <= lastDateofMonth; i++) {
+            let isToday = i === new Date().getDate() && currMonth === new Date().getMonth() && currYear ===
+                new Date().getFullYear() ? "active" : "";
+            liTag += `<li class="${isToday}">${i}</li>`;
+        }
+
+        for (let i = lastDayofMonth; i < 6; i++) {
+            liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+        }
+
+        currentDate.innerText = `${months[currMonth]} ${currYear}`;
+        daysTag.innerHTML = liTag;
+    };
+
+    renderCalendar();
+
+    prevNextIcon.forEach(icon => {
+        icon.addEventListener("click", () => {
+            currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+            if (currMonth < 0 || currMonth > 11) {
+                currYear = icon.id === "prev" ? currYear - 1 : currYear + 1;
+                currMonth = currMonth < 0 ? 11 : 0;
+            }
+
+            renderCalendar();
+        });
+    });
+</script>
 
 </body>
 

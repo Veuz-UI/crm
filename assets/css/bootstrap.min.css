@@ -3389,22 +3389,12 @@ textarea.form-control-lg {
     display: block
 }
 
-.form-control.is-valid,
-.was-validated .form-control:valid {
-    border-color: #34c38f;
-    padding-right: calc(1.5em + .94rem);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2334c38f' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right calc(.375em + .235rem) center;
-    background-size: calc(.75em + .47rem) calc(.75em + .47rem)
-}
-
-.form-control.is-valid:focus,
+/* .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
     border-color: #34c38f;
     -webkit-box-shadow: 0 0 0 .15rem rgba(52, 195, 143, .25);
     box-shadow: 0 0 0 .15rem rgba(52, 195, 143, .25)
-}
+} */
 
 .was-validated textarea.form-control:valid,
 textarea.form-control.is-valid {
@@ -3441,24 +3431,29 @@ textarea.form-control.is-valid {
 
 .form-check-input.is-valid,
 .was-validated .form-check-input:valid {
-    border-color: #34c38f
+    border-color: #f46a6a
 }
 
-.form-check-input.is-valid:checked,
+.form-check-input.is-valid,
+.was-validated .form-check-input:checked {
+    border-color: #2f5beb;
+}
+
+/* .form-check-input.is-valid:checked,
 .was-validated .form-check-input:valid:checked {
     background-color: #34c38f
-}
+} */
 
-.form-check-input.is-valid:focus,
+/* .form-check-input.is-valid:focus,
 .was-validated .form-check-input:valid:focus {
     -webkit-box-shadow: 0 0 0 .15rem rgba(52, 195, 143, .25);
     box-shadow: 0 0 0 .15rem rgba(52, 195, 143, .25)
-}
+} */
 
-.form-check-input.is-valid~.form-check-label,
+/* .form-check-input.is-valid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
     color: #34c38f
-}
+} */
 
 .form-check-inline .form-check-input~.valid-feedback {
     margin-left: .5em
@@ -6785,7 +6780,7 @@ fieldset:disabled .btn {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-start;
-    padding: 0px 2rem 1.75rem;
+    padding: 10px 2rem 1.5rem;
     background-color: var(--bs-modal-footer-bg);
     border-bottom-right-radius: var(--bs-modal-inner-border-radius);
     border-bottom-left-radius: var(--bs-modal-inner-border-radius)

@@ -54,8 +54,7 @@
                                 <ul class="navbar-nav">
 
                                     <li class="nav-item">
-                                        <a class="nav-link arrow-none" href="dashboard.html" id="topnav-dashboard"
-                                            role="button">
+                                        <a class="nav-link arrow-none" href="#" id="topnav-dashboard" role="button">
                                             <span key="t-dashboards">Dashboard</span>
                                         </a>
                                     </li>
@@ -263,15 +262,9 @@
                             <div data-simplebar style="max-height: 230px;">
 
                                 <div class="global-action-btns">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#log-call"><button type="button"
-                                            class="btn btn-orange waves-effect waves-light me-2"><i
-                                                class="bx bx-phone-call"></i></button>Log a Call</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#new-task"><button type="button"
-                                            class="btn btn-info waves-effect waves-light me-2"><i
-                                                class="bx bxs-edit"></i></button>New task</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#new-event"><button type="button"
-                                            class="btn btn-success waves-effect waves-light me-2"><i
-                                                class="bx bx-calendar-plus"></i></button>New Event</a>
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#log-call"><button type="button" class="btn btn-orange waves-effect waves-light me-2"><i class="bx bx-phone-call"></i></button>Log a Call</a>
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-task"><button type="button" class="btn btn-info waves-effect waves-light me-2"><i class="bx bxs-edit"></i></button>New task</a> 
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#new-event"><button type="button" class="btn btn-success waves-effect waves-light me-2"><i class="bx bx-calendar-plus"></i></button>New Event</a> 
                                 </div>
                             </div>
                         </div>
@@ -291,7 +284,7 @@
                             <div class="p-3">
                                 <div class="row align-items-center noti-heading">
                                     <div class="col">
-                                        <h5 class="m-0" key="t-notifications">Notifications</h5>
+                                        <h5 class="m-0" key="t-notifications"> Notifications </h5>
                                     </div>
                                     <div class="col-auto">
                                         <a href="#!" key="t-view-all"> View All</a>
@@ -382,8 +375,7 @@
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="profile.html"><i
-                                    class="bx bx-user font-size-16 align-middle me-1"></i>
+                            <a class="dropdown-item" href="profile.html"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                                 <span key="t-profile">Profile</span></a>
                             <a class="dropdown-item d-block" href="settings.html"><i
                                     class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
@@ -398,188 +390,66 @@
                 </div>
             </div>
         </header>
+
+
+
+
         <div class="page-content">
-            <div class="container-fluid px-0">
-                <div class="card">
-                    <div class="top-header-div top-header-sticky">
-                        <div class="main-heading">
-                            <h2 class="mb-0"><img src="assets/images/quotation.svg" alt="">Sticky Notes</h2>
+            <div class="container-fluid px-0 d-flex align-items-center justify-content-center">
+                <div class="card-profile">
+                    <div class="card-body">
+                        <div class="profile-banner d-flex justify-content-center">
+                            <img src="assets/images/profile-avatar.png" alt="" class="img-fluid rounded-circle">
                         </div>
-                        <div class="top-header-rightbtns">
-                            <button type="button" class="btn btn-primary waves-effect waves-light" id="addBtn"
-                                data-bs-toggle="modal" data-bs-target="#add-lead">
-                                <i class="bx bx-plus-circle font-size-15 align-middle me-1"></i>Add New
+                        <div class="profile-cntns text-center">
+                            <h4>Muhammed Nabeel</h4>
+                            <h5>nabeel@gmail.com</h5>
+                        </div>
+                        <div class="d-flex profile-location align-items-center text-center justify-content-center mt-3">
+                            <img src="assets/images/india-flag.svg" alt="" class="img-fluid">
+                            <h6>Kerala, India</h6>
+                        </div>
+                        <h3 class="designation"><span>@nabeel1</span>Lead Product Designer At Veuz</h3>
+                     <div class="d-flex active-time align-items-center justify-content-center">
+                        <i class="bx bxs-circle"></i>
+                        <p>Full Time</p>
+                     </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-primary waves-effect waves-light profile-btn">
+                                <i class="mdi mdi-account-circle"></i>Follow
                             </button>
+                            <button type="button" class="btn btn-outline-primary waves-effect waves-light profile-btn">
+                                <i class="mdi mdi-message-settings-outline"></i>Message
+                            </button>
+                            <button type="button" class="btn btn-outline-primary waves-effect waves-light profile-btn">
+                                <i class="mdi mdi-dots-horizontal"></i>More
+                            </button> 
                         </div>
-                    </div>
-
-                    <div>
-
-                        <div class="sticky-container" id="snote">
-                            <div class="sticky" contenteditable="true" id="1"
-                                style="transform: rotate(-0.698736deg); filter: hue-rotate(595.934deg);">Maxime
-                                mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur.<span class="close"
-                                    contenteditable="false" id="removeCard">X</span></div>
-                            <div class="sticky" contenteditable="true" id="2"
-                                style="transform: rotate(-2.56589deg); filter: hue-rotate(349.788deg);">Lorem ipsum
-                                dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur.<span class="close"
-                                    contenteditable="false" id="removeCard">X</span></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="log-call" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>Log a Call</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
-                        <label for="name">Subject</label>
-                        <i class="bx bx-search search-icn"></i>
-                    </div>
-
-                    <div class="form-grp">
-                        <textarea id="formmessage" class="form-control" rows="3" placeholder="Comments"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="new-task" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>New Task</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
-                        <label for="name">Subject</label>
-                        <i class="bx bx-search search-icn"></i>
-                    </div>
-
-                    <div class="inputGroup form-control">
-                        <input type="date" required="" autocomplete="off" value="">
-                        <label for="name">Due Date</label>
-                    </div>
-
-                    <h6 class="selct-box-head">Assign to</h6>
-                    <div class="form-grp inputGroup">
-                        <div class="select-inp">
-                            <select class="form-control">
-                                <option value="AK">None</option>
-                                <option value="HI">Qualificatio</option>
-                                <option value="CA">Need Analysis</option>
-                                <option value="NV">Proposal</option>
-                                <option value="CA">Negotiation </option>
-                                <option value="NV">Closed won</option>
-                                <option value="NV">Closed Lost </option>
-                            </select>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="new-event" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><span>New Event</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
-                        <label for="name">Subject</label>
-                        <i class="bx bx-search search-icn"></i>
-                    </div>
-
-                    <div class="form-grp">
-                        <textarea id="formmessage" class="form-control" rows="3" placeholder="Comments"></textarea>
-                    </div>
-                    <div class="row">
-                        <h6 class="selct-box-head">Start</h6>
-                        <div class="col-lg-6">
-
-                            <div class="inputGroup form-control">
-                                <input type="date" required="" autocomplete="off" value="">
-                                <label for="name">Date</label>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-
-                            <div class="inputGroup form-control">
-                                <input type="time" required="" autocomplete="off" value="">
-                                <label for="name">Time</label>
+                        <hr class="profile-border my-3">
+                        <div class="profile-skills">
+                            <h3>Skills</h3>
+                            <div class="flex-sm">
+                                <button type="button" class="btn btn-light waves-effect">UI Designer</button>
+                                <button type="button" class="btn btn-light waves-effect">UX Designer</button>
+                                <button type="button" class="btn btn-light waves-effect">Design System</button>
+                                <button type="button" class="btn btn-light waves-effect">Product</button>
+                                <button type="button" class="btn btn-light waves-effect">UI Designer</button>
+                                <button type="button" class="btn btn-light waves-effect">UX Designer</button>
+                                <button type="button" class="btn btn-light waves-effect">Design System</button>
                             </div>
                         </div>
+                        
                     </div>
-
-                    <div class="row">
-                        <h6 class="selct-box-head">End</h6>
-                        <div class="col-lg-6">
-
-                            <div class="inputGroup form-control">
-                                <input type="date" required="" autocomplete="off" value="">
-                                <label for="name">Date</label>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-
-                            <div class="inputGroup form-control">
-                                <input type="time" required="" autocomplete="off" value="">
-                                <label for="name">Time</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
-                        <label for="name">Location</label>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary text-uppercase br-50 btn-md">Save</button>
-                    <button type="button" class="btn btn-light text-uppercase br-50 btn-md"
-                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
 
 
         </div>
-    </div>
 
+
+
+
+    </div>
 
 
 
@@ -589,59 +459,15 @@
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
-
     <script src="assets/js/app.js"></script>
-
-    <script>
-        $(function () {
-            $(".ddl-select").each(function () {
+    <script src="assets/js/pages/note.js"></script>
 
 
-                $(this).hide();
-                var $select = $(this);
-                var _id = $(this).attr("id");
-                var wrapper = document.createElement("div");
-                wrapper.setAttribute("class", "ddl ddl_" + _id);
-
-                var input = document.createElement("h6");
-
-                input.setAttribute("class", "ddl-input");
-                input.setAttribute("id", "ddl_" + _id);
-                input.innerHTML = $(this)[0].options[$(this)[0].selectedIndex].innerText
-
-                $(this).before(wrapper);
-                var $ddl = $(".ddl_" + _id);
-                $ddl.append(input);
-                $ddl.append("<div class='ddl-options ddl-options-" + _id + "'></div>");
-                var $ddl_input = $("#ddl_" + _id);
-                var $ops_list = $(".ddl-options-" + _id);
-                var $ops = $(this)[0].options;
-                for (var i = 0; i < $ops.length; i++) {
-                    $ops_list.append(
-                        "<div data-value='" +
-                        $ops[i].value +
-                        "'>" +
-                        $ops[i].innerText +
-                        "</div>"
-                    );
-                }
-
-                $ddl_input.click(function () {
-                    $ddl.toggleClass("active");
-                });
-                $ddl_input.blur(function () {
-                    $ddl.removeClass("active");
-                });
-                $ops_list.find("div").click(function () {
-                    document.getElementsByClassName("ddl-input")[0].innerHTML = $(this).text();
-                    $ddl.removeClass("active");
-                });
-            });
-        });
-    </script>
     <script>
         // upload image
         const uploadArea = document.querySelector('#uploadArea')
+
+
         const dropZoon = document.querySelector('#dropZoon');
         const loadingText = document.querySelector('#loadingText');
         const fileInput = document.querySelector('#fileInput');
@@ -756,44 +582,58 @@
             };
         };
     </script>
+
     <script>
         $(document).ready(function () {
-
-
-            const addBtn = document.querySelector("#addBtn");
-            const snote = document.querySelector("#snote");
-             function randomNumber(min, max) {
-                return Math.random() * (max - min) + min;
-            }
-
-            addBtn.addEventListener("click", () => {
-                let angle = randomNumber(-3, 3);
-                let color = randomNumber(1, 720);
-                let snoteid=$("#snote").children().length
-                $("#snote").append(`<div class="sticky" contenteditable="true" id="${snoteid+1}"
-                                style="transform: rotate(${angle}deg); filter: hue-rotate(${color}deg);">enter your note<span class="close"
-                                    contenteditable="false" id="removeCard">X</span></div>`);
-
-            });
-           
-
-            $(document).on('click', '#removeCard', function(event) {
-                let sids=$(this).parent().attr('id')
-                $(`#${sids}`).hide();
-             });
-            //  sticky
-            $(document).on('click', '.sticky', function(event) {
-                let sids=$(this).attr('id')
-                console.log(sids);
-                $(`#${sids}`).attr('contenteditable','true');
-                // $(`#${sids}`).hide();
-             });
-            let stickyCont = document.querySelector(".sticky-container");
-            let stickySingle = document.createElement('div');
-            
+            var disabled = false;
+            $('.edit-icon').click(function () {
+                let cParent = $(this).parent();
+                cParent.children('input').prop('disabled', false);
+                cParent.children('input').focus();
+            })
         });
     </script>
 
+    <script>
+        ClassicEditor.create(document.querySelector(".editor"), {
+                toolbar: {
+                    items: [
+                        "heading",
+                        "|",
+                        "bold",
+                        "italic",
+                        "link",
+                        "bulletedList",
+                        "numberedList",
+                        "|",
+                        "indent",
+                        "outdent",
+                        "|",
+                        "imageUpload",
+                        "blockQuote",
+                        "mediaEmbed",
+                        "undo",
+                        "redo",
+                    ],
+                },
+                language: "es",
+                image: {
+                    toolbar: ["imageTextAlternative", "imageStyle:full", "imageStyle:side"],
+                },
+                licenseKey: "",
+            })
+            .then((editor) => {
+                window.editor = editor;
+            })
+            .catch((error) => {
+                console.error("Oops, something went wrong!");
+                console.error(
+                    "Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:"
+                );
+                console.warn("Build id: ref2goguw78q-8ghiwfe1qu83");
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>
