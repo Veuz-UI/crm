@@ -12,11 +12,145 @@
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
 </head>
 
 <body>
+    <style>
 
+        .select2.select2-container {
+          width: 100% !important;
+        }
+        .select2-container{
+            z-index: 100000;
+        }
+        
+        .select2-search__field:focus{
+            border: 0px !important;
+        }
+        
+        .select2.select2-container .select2-selection {
+          border: 1px solid transparent;
+          -webkit-border-radius: 0px;
+          -moz-border-radius: 0px;
+          border-radius: 0px;
+          margin-bottom: 2px;
+          outline: none !important;
+          transition: all .15s ease-in-out;
+        }
+        .select2.select2-container .select2-selection:focus{
+            border: 1px solid #ebebeb;
+        }
+        .select2.select2-container .select2-selection:focus{
+            border: 1px solid #ebebeb;
+        }
+        
+        .select2.select2-container .select2-selection .select2-selection__rendered {
+          color: #333;
+        }
+        
+        .select2.select2-container .select2-selection .select2-selection__arrow {
+          background: #f8f8f8;
+          border-left: 1px solid #ccc;
+          -webkit-border-radius: 0 3px 3px 0;
+          -moz-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
+          height: 32px;
+          width: 33px;
+        }
+        
+        .select2.select2-container.select2-container--open .select2-selection.select2-selection--single {
+          background: #f8f8f8;
+        }
+        
+        .select2.select2-container.select2-container--open .select2-selection.select2-selection--single .select2-selection__arrow {
+          -webkit-border-radius: 0 3px 0 0;
+          -moz-border-radius: 0 3px 0 0;
+          border-radius: 0 3px 0 0;
+        }
+        
+        .select2.select2-container.select2-container--open .select2-selection.select2-selection--multiple {
+          border: 1px solid #ebebeb;
+        }
+        
+        .select2.select2-container .select2-selection--multiple {
+            height: 27px;
+            min-height: auto;
+            overflow: auto;
+        }
+        
+        .select2.select2-container .select2-selection--multiple .select2-search--inline .select2-search__field {
+          margin-top: 0;
+        }
+        
+        .select2.select2-container .select2-selection--multiple .select2-selection__rendered {
+          display: flex;
+          padding: 2px 3px;
+          flex-wrap: wrap;
+        }
+        
+        .select2.select2-container .select2-selection--multiple .select2-selection__choice {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 3px;
+            margin: 0px 3px 2px;
+            padding: 0px 5px 0px 15px;
+            height: auto;
+            font-size: 11px;
+            position: relative;
+        }
+        
+        .select2.select2-container .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+            position: absolute;
+            top: -3px;
+            left: 3px;
+            margin: 0;
+            text-align: center;
+            color: #e74c3c;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        
+        .select2-container .select2-dropdown {
+          background: transparent;
+          border: none;
+          margin-top: -5px;
+        }
+        
+        .select2-container .select2-dropdown .select2-search {
+          padding: 0;
+        }
+        
+        .select2-container .select2-dropdown .select2-search input {
+          outline: none !important;
+          border: 1px solid #ebebeb !important;
+          border-bottom: none !important;
+          padding: 4px 6px !important;
+        }
+        
+        .select2-container .select2-dropdown .select2-results {
+          padding: 0;
+        }
+        
+        .select2-container .select2-dropdown .select2-results ul {
+          background: #fff;
+          border: 1px solid #ebebeb;
+        }
+        .select2-results__option {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        
+        .select2-container--default .select2-results__option[aria-selected=true] {
+            background-color: #ebebeb;
+        }
+        
+        .select2-container .select2-dropdown .select2-results ul .select2-results__option--highlighted[aria-selected] {
+          background-color: #3498db;
+        }
+        </style>
     <div id="preloader">
         <div id="status">
             <div class="spinner-chase">
@@ -287,7 +421,7 @@
                                         <h5 class="m-0" key="t-notifications"> Notifications </h5>
                                     </div>
                                     <div class="col-auto">
-                                        <a href="#!" key="t-view-all"> View All</a>
+                                        <a href="notification.html" key="t-view-all"> View All</a>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +493,7 @@
                                 </a>
                             </div>
                             <div class="p-2 border-top d-grid">
-                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="notification.html">
                                     <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View
                                         More..</span>
                                 </a>
@@ -449,8 +583,7 @@
                                 </div>
                                 <button data-bs-toggle="modal" data-bs-target="#edit-quote" type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
                                         class="mdi mdi-account-edit-outline"></i></button>
-                                <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"><i
-                                        class="bx bx-pie-chart"></i></button>
+                               
                                         <div class="dropdown d-inline-block user-dropdown">
                                             <button type="button" class="btn btn-soft-dark font-size-15 waves-effect waves-light"
                                                 id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -1278,12 +1411,12 @@
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label class="search-icon" for="name">Quote Name</label>
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label for="name">Opportunity Name</label>
                                 <i class="bx bx-search search-icn"></i>
                             </div>
@@ -1295,7 +1428,7 @@
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="date" required="" autocomplete="off">
+                                <input type="date">
                                 <label for="name">Expiration Date</label>
                             </div>
 
@@ -1311,23 +1444,23 @@
 
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label for="name">Search Contacts</label>
                                 <i class="bx bx-search search-icn"></i>
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label for="name">Email</label>
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label for="name">Phone</label>
                             </div>
 
                             <div class="inputGroup form-control">
-                                <input type="text" required="" autocomplete="off">
+                                <input type="text">
                                 <label for="name">Fax</label>
                             </div>
                         </div>
@@ -1370,67 +1503,274 @@
                     </ul>
                     <hr class="quote-frm-hr">
                     <div class="tab-pane" id="order-lines" role="tabpanel">
-                        <div class="quote-list">
-                            <div class="table-responsive quote-table">
-                                <table class="table mb-0 ">
-
-                                    <thead>
-                                        <tr>
-                                            <th>Product</th>
-                                            <th>Description</th>
-                                            <th>Quantity</th>
-                                            <th>Uom</th>
-                                            <th>Unit Product</th>
-                                            <th>Taxes</th>
-                                            <th>Discount</th>
-                                            <th>tax excel</th>
-                                            <th><i class="bx bx-filter-alt"></i></th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>1.00</td>
-                                            <td>Lorum ipsum</td>
-                                            <td>2.00</td>
-                                            <td>Units</td>
-                                            <td>0.00</td>
-                                            <td>15%</td>
-                                            <td>0.00</td>
-                                            <td class="">
-                                                <div class="dropdown">
-                                                    <a href="#" class="dropdown-toggle card-drop"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="mdi mdi-dots-vertical font-size-18"></i>
-                                                    </a>
-                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                        <li><a href="#"
-                                                                class="dropdown-item d-flex align-items-center"><i
-                                                                    class="bx bx-edit font-size-16 me-1"></i>Edit</a>
-                                                        </li>
-                                                        <li><a href="#"
-                                                                class="dropdown-item d-flex align-items-center"><i
-                                                                    class="bx bx-trash font-size-16 me-1"></i>Delete</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="9" class="add-tble-list">
-                                                <div class="d-flex add-table-content">
-                                                    <a href="">Add a product </a>
-                                                    <a href="">Add a Section</a>
-                                                    <a href="">Add a Note</a>
-                                                    <a href="">catalog</a>
-                                                </div>
-                                            </td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="quote-list quote-table-overflow">
+                            <div class="quote-table-view">
+                                <div class="drop-head">
+                                    <div class="drop-th drop-th1">Product</div>
+                                    <div class="drop-th drop-th2">Description</div>
+                                    <div class="drop-th drop-th3">Quantity</div>
+                                    <div class="drop-th drop-th4">Uom</div>
+                                    <div class="drop-th drop-th5">Unit Product</div>
+                                    <div class="drop-th drop-th6">Taxes</div>
+                                    <div class="drop-th drop-th7">Discount</div>
+                                    <div class="drop-th drop-th8">Tax Excel</div>
+                                    <div class="drop-th drop-th9">
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bx bx-slider"></i>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor1">
+                                                            Product
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor2" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor2">
+                                                            Description
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Quantity
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor4" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor4">
+                                                            Uom
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor5" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor5">
+                                                            Unit Product
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor6" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor6">
+                                                            Taxes
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor7" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor7">
+                                                            Discount
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor8" checked="">
+                                                        <label class="form-check-label" for="formCheckcolor8">
+                                                            Tax Excel
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor9">
+                                                        <label class="form-check-label" for="formCheckcolor9">
+                                                            Cost
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item">
+                                                    <div class="form-check form-check-primary">
+                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor10">
+                                                        <label class="form-check-label" for="formCheckcolor10">
+                                                            Margin
+                                                        </label>
+                                                    </div>
+                                                </a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                                <div id="sortable" class="drop-body">
+                                    <div class="drop__card">
+                                        <div class="drop-td drop-td1">
+                                            <select class="select-search">
+                                                <option value="Table">Table</option>
+                                                <option value="Bag">Bag</option>
+                                                <option value="Laptop">Laptop</option>
+                                                <option value="Printer">Printer</option>
+                                                <option value="Chair">Chair</option>
+                                                <option value="Fridge">Fridge</option>
+                                                <option value="Air Conditioner">Air Conditioner</option>
+                                             
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td2">
+                                            <textarea name="" id="">Lorem Ipsum</textarea>
+                                        </div>
+                                        <div class="drop-td drop-td3">
+                                            <input type="text" value="1.00">
+                                        </div>
+                                        <div class="drop-td drop-td4">
+                                            <select class="select-search">
+                                                <option value="Units">Units</option>
+                                                <option value="Dozens">Dozens</option>
+                                               
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td5">
+                                            <input type="text" value="7000.00">
+                                        </div>
+                                        <div class="drop-td drop-td6">
+                                            <select class="js-select2-multi" multiple="multiple">
+                                                <option selected>15 %</option>
+                                                <option>TAX 11</option>
+                                                <option>VAT TAX</option>
+                                                                                  
+                                              </select>
+                                        </div>
+                                        <div class="drop-td drop-td7">
+                                            <input type="text" value="0.00">
+                                        </div>
+                                        <div class="drop-td drop-td8">
+                                            <input type="text" value="$ 120.00" disabled>
+                                        </div>
+                                        <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                    </div>
+                                    <div class="drop__card">
+                                        <div class="drop-td drop-td1">
+                                            <select class="select-search">
+                                                <option value="Table">Table</option>
+                                                <option value="Bag">Bag</option>
+                                                <option value="Laptop">Laptop</option>
+                                                <option value="Printer">Printer</option>
+                                                <option value="Chair">Chair</option>
+                                                <option value="Fridge">Fridge</option>
+                                                <option value="Air Conditioner">Air Conditioner</option>
+                                             
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td2">
+                                            <textarea name="" id="">Lorem Ipsum</textarea>
+                                        </div>
+                                        <div class="drop-td drop-td3">
+                                            <input type="text" value="1.00">
+                                        </div>
+                                        <div class="drop-td drop-td4">
+                                            <select class="select-search">
+                                                <option value="Units">Units</option>
+                                                <option value="Dozens">Dozens</option>
+                                               
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td5">
+                                            <input type="text" value="7000.00">
+                                        </div>
+                                        <div class="drop-td drop-td6">
+                                            <select class="js-select2-multi" multiple="multiple">
+                                                <option selected>15 %</option>
+                                                <option>TAX 11</option>
+                                                <option>VAT TAX</option>
+                                                                                  
+                                              </select>
+                                        </div>
+                                        <div class="drop-td drop-td7">
+                                            <input type="text" value="0.00">
+                                        </div>
+                                        <div class="drop-td drop-td8">
+                                            <input type="text" value="$ 120.00" disabled>
+                                        </div>
+                                        <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                    </div>
+                                </div>
+                                <div class="drop-footer">
+                                    <div class="drop-ft add-product-btn">Add a product </div>
+                                    <div class="drop-ft add-section-btn">Add a Section</div>
+                                    <div class="drop-ft add-note-btn">Add a Note</div>
+                
+                                    
+                                </div>
+                                <div id="product-template" style="display: none;">
+                                    <div class="drop__card">
+                                        <div class="drop-td drop-td1">
+                                            <select class="select-search">
+                                                <option value="Table">Table</option>
+                                                <option value="Bag">Bag</option>
+                                                <option value="Laptop">Laptop</option>
+                                                <option value="Printer">Printer</option>
+                                                <option value="Chair">Chair</option>
+                                                <option value="Fridge">Fridge</option>
+                                                <option value="Air Conditioner">Air Conditioner</option>
+                                             
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td2">
+                                            <textarea name="" id="">Lorem Ipsum</textarea>
+                                        </div>
+                                        <div class="drop-td drop-td3">
+                                            <input type="text" value="1.00">
+                                        </div>
+                                        <div class="drop-td drop-td4">
+                                            <select class="select-search">
+                                                <option value="Units">Units</option>
+                                                <option value="Dozens">Dozens</option>
+                                               
+                                          </select>
+                                        </div>
+                                        <div class="drop-td drop-td5">
+                                            <input type="text" value="7000.00">
+                                        </div>
+                                        <div class="drop-td drop-td6">
+                                            <select class="js-select2-multi" multiple="multiple">
+                                                <option selected>15 %</option>
+                                                <option>TAX 11</option>
+                                                <option>VAT TAX</option>
+                                                                                  
+                                              </select>
+                                        </div>
+                                        <div class="drop-td drop-td7">
+                                            <input type="text" value="0.00">
+                                        </div>
+                                        <div class="drop-td drop-td8">
+                                            <input type="text" value="$ 120.00" disabled>
+                                        </div>
+                                        <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                    </div>
+                                </div>
+                                <div id="section-template" style="display: none;">
+                                    <div class="drop__card">
+                                        <div class="drop-td drop-td11">
+                                            <input type="text">
+                                        </div>                             
+                                        <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                    </div>
+                                </div>
+                                <div id="note-template" style="display: none;">
+                                    <div class="drop__card">
+                                        <div class="drop-td drop-td12">
+                                            <input type="text">
+                                        </div>                             
+                                        <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="quote-list">    
                             <div class="my-3">
                                 <div class="quote-total">
                                     <div class="row">
@@ -1510,12 +1850,12 @@
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label class="search-icon" for="name">Quote Name</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Opportunity Name</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
@@ -1527,7 +1867,7 @@
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off">
+                            <input type="date">
                             <label for="name">Expiration Date</label>
                         </div>
 
@@ -1543,23 +1883,23 @@
 
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Search Contacts</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Email</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Phone</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Fax</label>
                         </div>
                     </div>
@@ -1602,67 +1942,274 @@
                 </ul>
                 <hr class="quote-frm-hr">
                 <div class="tab-pane" id="order-lines" role="tabpanel">
-                    <div class="quote-list">
-                        <div class="table-responsive quote-table">
-                            <table class="table mb-0 ">
-
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Description</th>
-                                        <th>Quantity</th>
-                                        <th>Uom</th>
-                                        <th>Unit Product</th>
-                                        <th>Taxes</th>
-                                        <th>Discount</th>
-                                        <th>tax excel</th>
-                                        <th><i class="bx bx-filter-alt"></i></th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>1.00</td>
-                                        <td>Lorum ipsum</td>
-                                        <td>2.00</td>
-                                        <td>Units</td>
-                                        <td>0.00</td>
-                                        <td>15%</td>
-                                        <td>0.00</td>
-                                        <td class="">
-                                            <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle card-drop"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="mdi mdi-dots-vertical font-size-18"></i>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a href="#"
-                                                            class="dropdown-item d-flex align-items-center"><i
-                                                                class="bx bx-edit font-size-16 me-1"></i>Edit</a>
-                                                    </li>
-                                                    <li><a href="#"
-                                                            class="dropdown-item d-flex align-items-center"><i
-                                                                class="bx bx-trash font-size-16 me-1"></i>Delete</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="9" class="add-tble-list">
-                                            <div class="d-flex add-table-content">
-                                                <a href="">Add a product </a>
-                                                <a href="">Add a Section</a>
-                                                <a href="">Add a Note</a>
-                                                <a href="">catalog</a>
-                                            </div>
-                                        </td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="quote-list quote-table-overflow">
+                        <div class="quote-table-view">
+                            <div class="drop-head">
+                                <div class="drop-th drop-th1">Product</div>
+                                <div class="drop-th drop-th2">Description</div>
+                                <div class="drop-th drop-th3">Quantity</div>
+                                <div class="drop-th drop-th4">Uom</div>
+                                <div class="drop-th drop-th5">Unit Product</div>
+                                <div class="drop-th drop-th6">Taxes</div>
+                                <div class="drop-th drop-th7">Discount</div>
+                                <div class="drop-th drop-th8">Tax Excel</div>
+                                <div class="drop-th drop-th9">
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bx bx-slider"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor1">
+                                                        Product
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor2" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor2">
+                                                        Description
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Quantity
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor4" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor4">
+                                                        Uom
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor5" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor5">
+                                                        Unit Product
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor6" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor6">
+                                                        Taxes
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor7" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor7">
+                                                        Discount
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor8" checked="">
+                                                    <label class="form-check-label" for="formCheckcolor8">
+                                                        Tax Excel
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor9">
+                                                    <label class="form-check-label" for="formCheckcolor9">
+                                                        Cost
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <div class="form-check form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor10">
+                                                    <label class="form-check-label" for="formCheckcolor10">
+                                                        Margin
+                                                    </label>
+                                                </div>
+                                            </a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                            <div id="sortable1" class="drop-body">
+                                <div class="drop__card">
+                                    <div class="drop-td drop-td1">
+                                        <select class="select-search">
+                                            <option value="Table">Table</option>
+                                            <option value="Bag">Bag</option>
+                                            <option value="Laptop">Laptop</option>
+                                            <option value="Printer">Printer</option>
+                                            <option value="Chair">Chair</option>
+                                            <option value="Fridge">Fridge</option>
+                                            <option value="Air Conditioner">Air Conditioner</option>
+                                         
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td2">
+                                        <textarea name="" id="">Lorem Ipsum</textarea>
+                                    </div>
+                                    <div class="drop-td drop-td3">
+                                        <input type="text" value="1.00">
+                                    </div>
+                                    <div class="drop-td drop-td4">
+                                        <select class="select-search">
+                                            <option value="Units">Units</option>
+                                            <option value="Dozens">Dozens</option>
+                                           
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td5">
+                                        <input type="text" value="7000.00">
+                                    </div>
+                                    <div class="drop-td drop-td6">
+                                        <select class="js-select2-multi" multiple="multiple">
+                                            <option selected>15 %</option>
+                                            <option>TAX 11</option>
+                                            <option>VAT TAX</option>
+                                                                              
+                                          </select>
+                                    </div>
+                                    <div class="drop-td drop-td7">
+                                        <input type="text" value="0.00">
+                                    </div>
+                                    <div class="drop-td drop-td8">
+                                        <input type="text" value="$ 120.00" disabled>
+                                    </div>
+                                    <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                </div>
+                                <div class="drop__card">
+                                    <div class="drop-td drop-td1">
+                                        <select class="select-search">
+                                            <option value="Table">Table</option>
+                                            <option value="Bag">Bag</option>
+                                            <option value="Laptop">Laptop</option>
+                                            <option value="Printer">Printer</option>
+                                            <option value="Chair">Chair</option>
+                                            <option value="Fridge">Fridge</option>
+                                            <option value="Air Conditioner">Air Conditioner</option>
+                                         
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td2">
+                                        <textarea name="" id="">Lorem Ipsum</textarea>
+                                    </div>
+                                    <div class="drop-td drop-td3">
+                                        <input type="text" value="1.00">
+                                    </div>
+                                    <div class="drop-td drop-td4">
+                                        <select class="select-search">
+                                            <option value="Units">Units</option>
+                                            <option value="Dozens">Dozens</option>
+                                           
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td5">
+                                        <input type="text" value="7000.00">
+                                    </div>
+                                    <div class="drop-td drop-td6">
+                                        <select class="js-select2-multi" multiple="multiple">
+                                            <option selected>15 %</option>
+                                            <option>TAX 11</option>
+                                            <option>VAT TAX</option>
+                                                                              
+                                          </select>
+                                    </div>
+                                    <div class="drop-td drop-td7">
+                                        <input type="text" value="0.00">
+                                    </div>
+                                    <div class="drop-td drop-td8">
+                                        <input type="text" value="$ 120.00" disabled>
+                                    </div>
+                                    <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                </div>
+                            </div>
+                            <div class="drop-footer">
+                                <div class="drop-ft add-product-btn">Add a product </div>
+                                <div class="drop-ft add-section-btn">Add a Section</div>
+                                <div class="drop-ft add-note-btn">Add a Note</div>
+            
+                                
+                            </div>
+                            <div id="product-template1" style="display: none;">
+                                <div class="drop__card">
+                                    <div class="drop-td drop-td1">
+                                        <select class="select-search">
+                                            <option value="Table">Table</option>
+                                            <option value="Bag">Bag</option>
+                                            <option value="Laptop">Laptop</option>
+                                            <option value="Printer">Printer</option>
+                                            <option value="Chair">Chair</option>
+                                            <option value="Fridge">Fridge</option>
+                                            <option value="Air Conditioner">Air Conditioner</option>
+                                         
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td2">
+                                        <textarea name="" id="">Lorem Ipsum</textarea>
+                                    </div>
+                                    <div class="drop-td drop-td3">
+                                        <input type="text" value="1.00">
+                                    </div>
+                                    <div class="drop-td drop-td4">
+                                        <select class="select-search">
+                                            <option value="Units">Units</option>
+                                            <option value="Dozens">Dozens</option>
+                                           
+                                      </select>
+                                    </div>
+                                    <div class="drop-td drop-td5">
+                                        <input type="text" value="7000.00">
+                                    </div>
+                                    <div class="drop-td drop-td6">
+                                        <select class="js-select2-multi" multiple="multiple">
+                                            <option selected>15 %</option>
+                                            <option>TAX 11</option>
+                                            <option>VAT TAX</option>
+                                                                              
+                                          </select>
+                                    </div>
+                                    <div class="drop-td drop-td7">
+                                        <input type="text" value="0.00">
+                                    </div>
+                                    <div class="drop-td drop-td8">
+                                        <input type="text" value="$ 120.00" disabled>
+                                    </div>
+                                    <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                </div>
+                            </div>
+                            <div id="section-template1" style="display: none;">
+                                <div class="drop__card">
+                                    <div class="drop-td drop-td11">
+                                        <input type="text">
+                                    </div>                             
+                                    <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                </div>
+                            </div>
+                            <div id="note-template1" style="display: none;">
+                                <div class="drop__card">
+                                    <div class="drop-td drop-td12">
+                                        <input type="text">
+                                    </div>                             
+                                    <div class="drop-td drop-td9"><i class="far fa-trash-alt dlt-quote-tr"></i></div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="quote-list">
                         <div class="my-3">
                             <div class="quote-total">
                                 <div class="row">
@@ -1754,7 +2301,7 @@
             <div class="modal-body">
                 <h6 class="selct-box-head">Search Owner</h6>
                 <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
+                    <input type="text">
                     <label class="search-icon" for="name">Search Owner</label>
                     <i class="bx bx-search search-icn"></i>
                 </div>
@@ -1779,7 +2326,7 @@
             <div class="modal-body">
 
                 <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
+                    <input type="text">
                     <label for="name">Subject</label>
                     <i class="bx bx-search search-icn"></i>
                 </div>
@@ -1807,13 +2354,13 @@
             <div class="modal-body">
 
                 <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
+                    <input type="text">
                     <label for="name">Subject</label>
                     <i class="bx bx-search search-icn"></i>
                 </div>
 
                 <div class="inputGroup form-control">
-                    <input type="date" required="" autocomplete="off" value="">
+                    <input type="date">
                     <label for="name">Due Date</label>
                 </div>
 
@@ -1852,7 +2399,7 @@
             <div class="modal-body">
 
                 <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
+                    <input type="text">
                     <label for="name">Subject</label>
                     <i class="bx bx-search search-icn"></i>
                 </div>
@@ -1865,7 +2412,7 @@
                     <div class="col-lg-6">
 
                         <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off" value="">
+                            <input type="date">
                             <label for="name">Date</label>
                         </div>
 
@@ -1873,7 +2420,7 @@
                     <div class="col-lg-6">
 
                         <div class="inputGroup form-control">
-                            <input type="time" required="" autocomplete="off" value="">
+                            <input type="time">
                             <label for="name">Time</label>
                         </div>
                     </div>
@@ -1884,7 +2431,7 @@
                     <div class="col-lg-6">
 
                         <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off" value="">
+                            <input type="date">
                             <label for="name">Date</label>
                         </div>
 
@@ -1892,14 +2439,14 @@
                     <div class="col-lg-6">
 
                         <div class="inputGroup form-control">
-                            <input type="time" required="" autocomplete="off" value="">
+                            <input type="time">
                             <label for="name">Time</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="inputGroup form-control">
-                    <input type="text" required="" autocomplete="off">
+                    <input type="text">
                     <label for="name">Location</label>
                 </div>
             </div>
@@ -1921,7 +2468,10 @@
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="assets/js/select-search.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
         $('.select2').select2({
@@ -1975,126 +2525,80 @@
             });
         });
     </script>
-    <script>
-        // upload image
-        const uploadArea = document.querySelector('#uploadArea')
-        const dropZoon = document.querySelector('#dropZoon');
-        const loadingText = document.querySelector('#loadingText');
-        const fileInput = document.querySelector('#fileInput');
-        const previewImage = document.querySelector('#previewImage');
-        const fileDetails = document.querySelector('#fileDetails');
-        const uploadedFile = document.querySelector('#uploadedFile');
-        const uploadedFileInfo = document.querySelector('#uploadedFileInfo');
-        const uploadedFileName = document.querySelector('.uploaded-file__name');
-        const uploadedFileIconText = document.querySelector('.uploaded-file__icon-text');
-        const uploadedFileCounter = document.querySelector('.uploaded-file__counter');
-        const imagesTypes = [
-            "jpeg",
-            "png",
-            "svg",
-            "gif"
-        ];
-
-        dropZoon.addEventListener('dragover', function (event) {
-            event.preventDefault();
-            dropZoon.classList.add('drop-zoon--over');
-        });
-
-        dropZoon.addEventListener('dragleave', function (event) {
-            dropZoon.classList.remove('drop-zoon--over');
-        });
-
-        dropZoon.addEventListener('drop', function (event) {
-            event.preventDefault();
-            dropZoon.classList.remove('drop-zoon--over');
-            const file = event.dataTransfer.files[0];
-            uploadFile(file);
-        });
-
-        dropZoon.addEventListener('click', function (event) {
-            fileInput.click();
-        });
 
 
-        fileInput.addEventListener('change', function (event) {
+<script>
+    $('.inputGroup input').on('focusin', function () {
+        $(this).parent().find('label').addClass('active');
+    });
 
-            const file = event.target.files[0];
-            uploadFile(file);
-        });
+    $('.inputGroup input').on('focusout', function () {
+        if (!this.value) {
+            $(this).parent().find('label').removeClass('active');
+        }
+    });
 
-        function uploadFile(file) {
-            const fileReader = new FileReader();
-            const fileType = file.type;
-            const fileSize = file.size;
+    var dateInputs = document.querySelectorAll('.inputGroup input[type="date"] , .inputGroup input[type="time"]');
 
-            if (fileValidate(fileType, fileSize)) {
-                dropZoon.classList.add('drop-zoon--Uploaded');
-                loadingText.style.display = "block";
-                previewImage.style.display = 'none';
-                uploadedFile.classList.remove('uploaded-file--open');
-                uploadedFileInfo.classList.remove('uploaded-file__info--active');
-
-                fileReader.addEventListener('load', function () {
-                    setTimeout(function () {
-                        uploadArea.classList.add('upload-area--open');
-                        loadingText.style.display = "none";
-                        previewImage.style.display = 'block';
-                        fileDetails.classList.add('file-details--open');
-                        uploadedFile.classList.add('uploaded-file--open');
-                        uploadedFileInfo.classList.add('uploaded-file__info--active');
-                    }, 500);
-
-                    previewImage.setAttribute('src', fileReader.result);
-                    uploadedFileName.innerHTML = file.name;
-
-                    progressMove();
-                });
-
-                fileReader.readAsDataURL(file);
+    dateInputs.forEach(function (dateInput) {
+        dateInput.addEventListener('input', function () {
+            if (this.value) {
+                this.classList.add('hasValue');
             } else {
+                this.classList.remove('hasValue');
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable1").sortable();
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(".js-select2-multi").select2({
+            closeOnSelect: false
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.dlt-quote-tr', function () {
+            $(this).closest('.drop__card').remove();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.add-product-btn', function () {
+            var newProductCard = $('#product-template').clone().removeAttr('id').show();
+            $('#sortable').append(newProductCard);
+        });
+        $(document).on('click', '.add-section-btn', function () {
+            var newSectionCard = $('#section-template').clone().removeAttr('id').show();
+            $('#sortable').append(newSectionCard);
+        });
+        $(document).on('click', '.add-note-btn', function () {
+            var newNoteCard = $('#note-template').clone().removeAttr('id').show();
+            $('#sortable').append(newNoteCard);
+        });
 
-                this;
-
-            };
-        };
-
-
-        function progressMove() {
-            let counter = 0;
-            setTimeout(() => {
-                let counterIncrease = setInterval(() => {
-                    if (counter === 100) {
-                        clearInterval(counterIncrease);
-                    } else {
-                        counter = counter + 10;
-                        uploadedFileCounter.innerHTML = `${counter}%`
-                    }
-                }, 100);
-            }, 600);
-        };
-
-        function fileValidate(fileType, fileSize) {
-            let isImage = imagesTypes.filter((type) => fileType.indexOf(`image/${type}`) !== -1);
-            if (isImage[0] === 'jpeg') {
-                uploadedFileIconText.innerHTML = 'jpg';
-            } else {
-                uploadedFileIconText.innerHTML = isImage[0];
-            };
-
-            if (isImage.length !== 0) {
-                if (fileSize <= 2000000) {
-                    return true;
-                } else {
-                    return alert('Please Your File Should be 2 Megabytes or Less');
-                };
-            } else {
-                return alert('Please make sure to upload An Image File Type');
-            };
-        };
-    </script>
-
-
-
+        $(document).on('click', '.add-product-btn', function () {
+            var newProductCard1 = $('#product-template1').clone().removeAttr('id').show();
+            $('#sortable1').append(newProductCard1);
+        });
+        $(document).on('click', '.add-section-btn', function () {
+            var newSectionCard1 = $('#section-template1').clone().removeAttr('id').show();
+            $('#sortable1').append(newSectionCard1);
+        });
+        $(document).on('click', '.add-note-btn', function () {
+            var newNoteCard1 = $('#note-template1').clone().removeAttr('id').show();
+            $('#sortable1').append(newNoteCard1);
+        });
+    });
+</script>
 </body>
 
 </html>

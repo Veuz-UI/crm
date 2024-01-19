@@ -3653,8 +3653,8 @@ textarea.form-control.is-invalid {
     background-color: var(--bs-btn-hover-bg);
     border-color: var(--bs-btn-hover-border-color);
     outline: 0;
-    -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
-    box-shadow: var(--bs-btn-focus-box-shadow)
+    /* -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
+    box-shadow: var(--bs-btn-focus-box-shadow) */
 }
 
 .btn-check:active+.btn,
@@ -3667,14 +3667,14 @@ textarea.form-control.is-invalid {
     border-color: var(--bs-btn-active-border-color)
 }
 
-.btn-check:active+.btn:focus,
+/* .btn-check:active+.btn:focus,
 .btn-check:checked+.btn:focus,
 .btn.active:focus,
 .btn.show:focus,
 .btn:active:focus {
     -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
     box-shadow: var(--bs-btn-focus-box-shadow)
-}
+} */
 
 .btn.disabled,
 .btn:disabled,

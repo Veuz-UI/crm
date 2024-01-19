@@ -287,7 +287,7 @@
                                         <h5 class="m-0" key="t-notifications"> Notifications </h5>
                                     </div>
                                     <div class="col-auto">
-                                        <a href="#!" key="t-view-all"> View All</a>
+                                        <a href="notification.html" key="t-view-all"> View All</a>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +359,7 @@
                                 </a>
                             </div>
                             <div class="p-2 border-top d-grid">
-                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="notification.html">
                                     <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View
                                         More..</span>
                                 </a>
@@ -493,6 +493,9 @@
                                                     </div>
 
                                                 </div>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="btn btn-primary waves-effect waves-light bt-sm">Save</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -505,14 +508,11 @@
                             <div class="card-body">
                                 <div class="status-tags-div">
                                     <div class="status-tags">
-                                        <div class="status-tag">
-                                            <i class="fas fa-check"></i>
-                                        </div>
-                                        <div class="status-tag active">
+                                        <div class="status-tag prev">
                                             <h6>New</h6>
                                         </div>
-                                        <div class="status-tag">
-                                            <h6>Proposal </h6>
+                                        <div class="status-tag active">
+                                            <h6>Proposal</h6>
                                         </div>
                                         <div class="status-tag">
                                             <h6>Negotiation</h6>
@@ -520,13 +520,14 @@
                                         <div class="status-tag">
                                             <h6>Closed</h6>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="details-top-content">
                                     <div class="row">
                                         <div class="col-md-12 text-right">
                                             <button type="button"
-                                                class="btn btn-primary waves-effect waves-light bt-sm">Mark
+                                                class="btn btn-primary waves-effect waves-light bt-sm mark-status">Mark
                                                 Status as Complete</button>
                                         </div>
                                         <div class="col-md-6 pe-5">
@@ -915,7 +916,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                                    <div class="col-md-12 text-right">
+                                                        <button type="button" class="btn btn-primary waves-effect waves-light bt-sm">Save</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="details-btm-tab">
@@ -1131,36 +1134,37 @@
                             <div class="card-body">
                                 <div class="upload-file-card">
                                     <h5>Upload Files</h5>
-                                    <div id="uploadArea" class="upload-area">
-                                        <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                                    <div class="upload-area" id="uploadArea1" onclick="importDifferentFile(1)">
+                                        <div class="upload-area__drop-zoon drop-zoon" id="dropZoon1">
                                             <span class="drop-zoon__icon">
-                                                <h6><i class="bx bx-upload"></i> Upload File <a href="#">Choose File</a>
+                                                <h6><i class="bx bx-upload"></i> Upload
+                                                    File <a href="#">Choose File</a>
                                                 </h6>
                                             </span>
-
-                                            <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
-                                            <img src="" alt="Preview Image" id="previewImage"
-                                                class="drop-zoon__preview-image" draggable="false">
-                                            <input type="file" id="fileInput" class="drop-zoon__file-input"
-                                                accept="image/*">
+                                           
+                                            <span class="drop-zoon__loading-text" id="loadingText1">Please Wait</span>
+                                            <img src="" alt="Preview Image" class="drop-zoon__preview-image" id="previewImage1" draggable="false">
+                                            <input type="file" class="drop-zoon__file-input" id="fileInput1" accept="image/*">
                                         </div>
-
-                                        <div id="fileDetails" class="upload-area__file-details file-details">
+                
+                                        <div class="upload-area__file-details file-details" id="fileDetails1">
                                             <h3 class="file-details__title">Uploaded File</h3>
-
-                                            <div id="uploadedFile" class="uploaded-file">
+                
+                                            <div class="uploaded-file" id="uploadedFile1">
                                                 <div class="uploaded-file__icon-container">
                                                     <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                                    <span class="uploaded-file__icon-text"></span>
+                                                    <span class="uploaded-file__icon-text" id="uploaded-file__icon-text1"></span>
                                                 </div>
-
-                                                <div id="uploadedFileInfo" class="uploaded-file__info">
-                                                    <span class="uploaded-file__name">Proejct 1</span>
-                                                    <span class="uploaded-file__counter">0%</span>
+                
+                                                <div class="uploaded-file__info" id="uploadedFileInfo1">
+                                                    <span class="uploaded-file__name" id="uploaded-file__name1">Project 1</span>
+                                                    <span class="uploaded-file__counter" id="uploaded-file__counter1">0%</span>
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary waves-effect waves-light bt-sm">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -1191,7 +1195,7 @@
                 <div class="modal-body">
 
                     <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
+                        <input type="text">
                         <label for="name">Subject</label>
                         <i class="bx bx-search search-icn"></i>
                     </div>
@@ -1219,13 +1223,13 @@
                 <div class="modal-body">
 
                     <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
+                        <input type="text">
                         <label for="name">Subject</label>
                         <i class="bx bx-search search-icn"></i>
                     </div>
 
                     <div class="inputGroup form-control">
-                        <input type="date" required="" autocomplete="off" value="">
+                        <input type="date">
                         <label for="name">Due Date</label>
                     </div>
 
@@ -1264,7 +1268,7 @@
                 <div class="modal-body">
 
                     <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
+                        <input type="text">
                         <label for="name">Subject</label>
                         <i class="bx bx-search search-icn"></i>
                     </div>
@@ -1277,7 +1281,7 @@
                         <div class="col-lg-6">
 
                             <div class="inputGroup form-control">
-                                <input type="date" required="" autocomplete="off" value="">
+                                <input type="date">
                                 <label for="name">Date</label>
                             </div>
 
@@ -1285,7 +1289,7 @@
                         <div class="col-lg-6">
 
                             <div class="inputGroup form-control">
-                                <input type="time" required="" autocomplete="off" value="">
+                                <input type="time">
                                 <label for="name">Time</label>
                             </div>
                         </div>
@@ -1296,7 +1300,7 @@
                         <div class="col-lg-6">
 
                             <div class="inputGroup form-control">
-                                <input type="date" required="" autocomplete="off" value="">
+                                <input type="date">
                                 <label for="name">Date</label>
                             </div>
 
@@ -1304,14 +1308,14 @@
                         <div class="col-lg-6">
 
                             <div class="inputGroup form-control">
-                                <input type="time" required="" autocomplete="off" value="">
+                                <input type="time">
                                 <label for="name">Time</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
+                        <input type="text">
                         <label for="name">Location</label>
                     </div>
                 </div>
@@ -1491,12 +1495,12 @@
                 <div class="modal-body">
 
                     <div class="inputGroup form-control">
-                        <input type="text" required="" autocomplete="off">
+                        <input type="text">
                         <label for="name">Amount</label>
                     </div>
 
                     <div class="inputGroup form-control">
-                        <input type="date" required="" autocomplete="off">
+                        <input type="date">
                         <label for="name">Closed Date</label>
                     </div>
 
@@ -1505,7 +1509,7 @@
                             <label for="name">Roi Analysis Completed</label>
                         </div>
                         <div class="col-md-4">
-                            <input type="checkbox" required="" autocomplete="off" style="margin-top: 3px;">
+                            <input type="checkbox" style="margin-top: 3px;">
                         </div>
 
 
@@ -1533,37 +1537,35 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="uploadArea" class="upload-area">
-                            <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+                        <div class="upload-area" id="uploadArea2" onclick="importDifferentFile(2)">
+                            <div class="upload-area__drop-zoon drop-zoon" id="dropZoon2">
                                 <span class="drop-zoon__icon">
                                     <i class='bx bxs-file-image'></i>
                                 </span>
                                 <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                                <span id="loadingText" class="drop-zoon__loading-text">Please Wait</span>
-                                <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image"
-                                    draggable="false">
-                                <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+                                <span class="drop-zoon__loading-text" id="loadingText2">Please Wait</span>
+                                <img src="" alt="Preview Image" class="drop-zoon__preview-image" id="previewImage2" draggable="false">
+                                <input type="file" class="drop-zoon__file-input" id="fileInput2" accept="image/*">
                             </div>
-
-                            <div id="fileDetails" class="upload-area__file-details file-details">
+    
+                            <div class="upload-area__file-details file-details" id="fileDetails2">
                                 <h3 class="file-details__title">Uploaded File</h3>
-
-                                <div id="uploadedFile" class="uploaded-file">
+    
+                                <div class="uploaded-file dlt-upload-file" id="uploadedFile2">
                                     <div class="uploaded-file__icon-container">
                                         <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                                        <span class="uploaded-file__icon-text"></span>
+                                        <span class="uploaded-file__icon-text" id="uploaded-file__icon-text2"></span>
                                     </div>
-
-                                    <div id="uploadedFileInfo" class="uploaded-file__info">
-                                        <span class="uploaded-file__name">Proejct 1</span>
-                                        <span class="uploaded-file__counter">0%</span>
+    
+                                    <div class="uploaded-file__info" id="uploadedFileInfo2">
+                                        <span class="uploaded-file__name" id="uploaded-file__name2">Project 1</span>
+                                        <span class="uploaded-file__counter"><i class="bx bx-trash"></i></span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label class="search-icon" for="name">Account Name</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
@@ -1577,17 +1579,17 @@
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Opportunity Name</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Amount</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="date" required="" autocomplete="off" value="">
+                            <input type="date">
                             <label for="name">Close Date</label>
                         </div>
 
@@ -1608,12 +1610,12 @@
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Probability%</label>
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Next Step</label>
                         </div>
 
@@ -1646,7 +1648,7 @@
                         </div>
 
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Primary Campaign Source</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
@@ -1656,12 +1658,12 @@
 
                         <h5 class="addrss-info mt-3">Other Information</h5>
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Contract</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
                         <div class="inputGroup form-control">
-                            <input type="text" required="" autocomplete="off">
+                            <input type="text">
                             <label for="name">Synced Quote</label>
                             <i class="bx bx-search search-icn"></i>
                         </div>
@@ -1710,123 +1712,120 @@
     <script src="assets/js/app.js"></script>
 
     <script>
-        // upload image
-        const uploadArea = document.querySelector('#uploadArea')
-
-
-        const dropZoon = document.querySelector('#dropZoon');
-        const loadingText = document.querySelector('#loadingText');
-        const fileInput = document.querySelector('#fileInput');
-        const previewImage = document.querySelector('#previewImage');
-        const fileDetails = document.querySelector('#fileDetails');
-        const uploadedFile = document.querySelector('#uploadedFile');
-        const uploadedFileInfo = document.querySelector('#uploadedFileInfo');
-        const uploadedFileName = document.querySelector('.uploaded-file__name');
-        const uploadedFileIconText = document.querySelector('.uploaded-file__icon-text');
-        const uploadedFileCounter = document.querySelector('.uploaded-file__counter');
-        const imagesTypes = [
-            "jpeg",
-            "png",
-            "svg",
-            "gif"
-        ];
-
-        dropZoon.addEventListener('dragover', function (event) {
-            event.preventDefault();
-            dropZoon.classList.add('drop-zoon--over');
-        });
-
-        dropZoon.addEventListener('dragleave', function (event) {
-            dropZoon.classList.remove('drop-zoon--over');
-        });
-
-        dropZoon.addEventListener('drop', function (event) {
-            event.preventDefault();
-            dropZoon.classList.remove('drop-zoon--over');
-            const file = event.dataTransfer.files[0];
-            uploadFile(file);
-        });
-
-        dropZoon.addEventListener('click', function (event) {
-            fileInput.click();
-        });
-
-
-        fileInput.addEventListener('change', function (event) {
-
-            const file = event.target.files[0];
-            uploadFile(file);
-        });
-
-        function uploadFile(file) {
-            const fileReader = new FileReader();
-            const fileType = file.type;
-            const fileSize = file.size;
-
-            if (fileValidate(fileType, fileSize)) {
-                dropZoon.classList.add('drop-zoon--Uploaded');
-                loadingText.style.display = "block";
-                previewImage.style.display = 'none';
-                uploadedFile.classList.remove('uploaded-file--open');
-                uploadedFileInfo.classList.remove('uploaded-file__info--active');
-
-                fileReader.addEventListener('load', function () {
-                    setTimeout(function () {
-                        uploadArea.classList.add('upload-area--open');
-                        loadingText.style.display = "none";
-                        previewImage.style.display = 'block';
-                        fileDetails.classList.add('file-details--open');
-                        uploadedFile.classList.add('uploaded-file--open');
-                        uploadedFileInfo.classList.add('uploaded-file__info--active');
-                    }, 500);
-
-                    previewImage.setAttribute('src', fileReader.result);
-                    uploadedFileName.innerHTML = file.name;
-
-                    progressMove();
-                });
-
-                fileReader.readAsDataURL(file);
-            } else {
-
-                this;
-
-            };
-        };
-
-
-        function progressMove() {
-            let counter = 0;
-            setTimeout(() => {
-                let counterIncrease = setInterval(() => {
-                    if (counter === 100) {
-                        clearInterval(counterIncrease);
-                    } else {
-                        counter = counter + 10;
-                        uploadedFileCounter.innerHTML = `${counter}%`
-                    }
-                }, 100);
-            }, 600);
-        };
-
-        function fileValidate(fileType, fileSize) {
-            let isImage = imagesTypes.filter((type) => fileType.indexOf(`image/${type}`) !== -1);
-            if (isImage[0] === 'jpeg') {
-                uploadedFileIconText.innerHTML = 'jpg';
-            } else {
-                uploadedFileIconText.innerHTML = isImage[0];
-            };
-
-            if (isImage.length !== 0) {
-                if (fileSize <= 2000000) {
-                    return true;
+ 
+        function importDifferentFile(imgval) {
+        
+            const uploadArea = document.querySelector('#uploadArea' + imgval)
+            const dropZoon = document.querySelector('#dropZoon' + imgval);
+            const loadingText = document.querySelector('#loadingText' + imgval);
+            const fileInput = document.querySelector('#fileInput' + imgval);
+            const previewImage = document.querySelector('#previewImage' + imgval);
+            const fileDetails = document.querySelector('#fileDetails' + imgval);
+            const uploadedFile = document.querySelector('#uploadedFile' + imgval);
+            const uploadedFileInfo = document.querySelector('#uploadedFileInfo' + imgval);
+            const uploadedFileName = document.querySelector('#uploaded-file__name' + imgval);
+            const uploadedFileIconText = document.querySelector('#uploaded-file__icon-text' + imgval);
+            const uploadedFileCounter = document.querySelector('#uploaded-file__counter' + imgval);
+            const imagesTypes = [
+                "jpeg",
+                "png",
+                "svg",
+                "gif"
+            ];
+        
+            dropZoon.addEventListener('dragover', function (event) {
+                event.preventDefault();
+                dropZoon.classList.add('drop-zoon--over');
+            });
+        
+            dropZoon.addEventListener('dragleave', function (event) {
+                dropZoon.classList.remove('drop-zoon--over');
+            });
+        
+            dropZoon.addEventListener('drop', function (event) {
+                event.preventDefault();
+                dropZoon.classList.remove('drop-zoon--over');
+                const file = event.dataTransfer.files[0];
+                uploadFile(file);
+            });
+        
+            fileInput.click()
+            fileInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                uploadFile(file);
+            });
+        
+            function uploadFile(file) {
+                const fileReader = new FileReader();
+                const fileType = file.type;
+                const fileSize = file.size;
+        
+                if (fileValidate(fileType, fileSize)) {
+                    dropZoon.classList.add('drop-zoon--Uploaded');
+                    loadingText.style.display = "block";
+                    previewImage.style.display = 'none';
+                    uploadedFile.classList.remove('uploaded-file--open');
+                    uploadedFileInfo.classList.remove('uploaded-file__info--active');
+        
+                    fileReader.addEventListener('load', function () {
+                        setTimeout(function () {
+                            uploadArea.classList.add('upload-area--open');
+                            loadingText.style.display = "none";
+                            previewImage.style.display = 'block';
+                            fileDetails.classList.add('file-details--open');
+                            uploadedFile.classList.add('uploaded-file--open');
+                            uploadedFileInfo.classList.add('uploaded-file__info--active');
+                        }, 500);
+        
+                        previewImage.setAttribute('src', fileReader.result);
+                        uploadedFileName.innerHTML = file.name;
+        
+                        progressMove();
+                    });
+        
+                    fileReader.readAsDataURL(file);
                 } else {
-                    return alert('Please Your File Should be 2 Megabytes or Less');
+        
+                    this;
+        
                 };
-            } else {
-                return alert('Please make sure to upload An Image File Type');
             };
-        };
+        
+        
+            function progressMove() {
+                let counter = 0;
+                setTimeout(() => {
+                    let counterIncrease = setInterval(() => {
+                        if (counter === 100) {
+                            clearInterval(counterIncrease);
+                        } else {
+                            counter = counter + 10;
+                            uploadedFileCounter.innerHTML = `${counter}%`
+                        }
+                    }, 100);
+                }, 600);
+            };
+        
+            function fileValidate(fileType, fileSize) {
+                let isImage = imagesTypes.filter((type) => fileType.indexOf(`image/${type}`) !== -1);
+                if (isImage[0] === 'jpeg') {
+                    uploadedFileIconText.innerHTML = 'jpg';
+                } else {
+                    uploadedFileIconText.innerHTML = isImage[0];
+                };
+        
+                if (isImage.length !== 0) {
+                    if (fileSize <= 2000000) {
+                        return true;
+                    } else {
+                        return alert('Please Your File Should be 2 Megabytes or Less');
+                    };
+                } else {
+                    return alert('Please make sure to upload An Image File Type');
+                };
+            };
+        }
+           
     </script>
   <script>
     $(document).ready(function () {
@@ -1838,7 +1837,43 @@
         })
     });
 </script>
+<script>
+    $('.inputGroup input').on('focusin', function () {
+        $(this).parent().find('label').addClass('active');
+    });
 
+    $('.inputGroup input').on('focusout', function () {
+        if (!this.value) {
+            $(this).parent().find('label').removeClass('active');
+        }
+    });
+
+    var dateInputs = document.querySelectorAll('.inputGroup input[type="date"] , .inputGroup input[type="time"]');
+
+    dateInputs.forEach(function (dateInput) {
+        dateInput.addEventListener('input', function () {
+            if (this.value) {
+                this.classList.add('hasValue');
+            } else {
+                this.classList.remove('hasValue');
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('.status-tag').click(function () {
+            $('.status-tag.active').removeClass('active');
+            $(this).addClass("active").removeClass("prev");
+        });
+        $('.mark-status').on('click', function () {      
+            var activeIndex = $('.status-tag.active').index();
+            $('.status-tag:lt(' + activeIndex + ')').addClass('prev');
+            $('.status-tag:gt(' + activeIndex + ')').removeClass('prev');
+        });
+    });
+
+</script>
 </body>
 
 </html>
